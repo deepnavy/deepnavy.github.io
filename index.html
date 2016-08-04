@@ -3,12 +3,37 @@ layout: default
 ---
 {% assign posts_count = (paginator.posts | size) %}
 
+
+
 <div class="home">
   {% if posts_count > 0 %}
     <div class="posts">
       {% for post in paginator.posts %}
+
+      
         <div class="post py3">
-          <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+          <p class="post-meta">
+            {% assign m = post.date | date: "%-m" %}
+            {{ post.date | date: "%-d" }}
+              {% case m %}
+                {% when '1' %}Января
+                {% when '2' %}Февраля
+                {% when '3' %}Марта
+                {% when '4' %}Апреля
+                {% when '5' %}Мая
+                {% when '6' %}Июня
+                {% when '7' %}Июля
+                {% when '8' %}Августа
+                {% when '9' %}Сентября
+                {% when '10' %}Октября
+                {% when '11' %}Ноября
+                {% when '12' %}Декабря
+              {% endcase %}
+              {{ post.date | date: "%Y" }}
+
+            
+
+            </p>
           <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
           <p class="post-summary">
             {% if post.summary %}
@@ -26,3 +51,5 @@ layout: default
     <h1 class='center'>{{ site.text.index.coming_soon }}</h3>
   {% endif %}
 </div>
+
+

@@ -2,10 +2,10 @@
 title:       MuchData
 email:       your_email@example.com
 author:      Александр Петров
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "Блог про визуализацию и анализ данных"
 baseurl:     ""
 url:         "http://pixyll.com"
-date_format: "%b %-d, %Y"
+date_format: "%-d %b %Y"
 
 # Google services
 google_verification:
@@ -66,8 +66,8 @@ share_hackernews: false
 
 text:
   pagination:
-    newer: 'Newer'
-    older: 'Older'
+    newer: 'Новые'
+    older: 'Старые'
   share_buttons:
     text:         'Share this post!'
     facebook:     'Share on Facebook'
@@ -108,5 +108,6 @@ sass:
 gems:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-auto-image
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
