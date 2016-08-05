@@ -1,10 +1,10 @@
 # Site settings
 title:       MuchData
-email:       your_email@example.com
+email:       petrov.evpanet@gamil.com
 author:      Александр Петров
 description: "Блог про визуализацию и анализ данных"
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "http://www.muchdata.net/"
 date_format: "%-d %b %Y"
 
 # Google services
@@ -69,33 +69,33 @@ text:
     newer: 'Новые'
     older: 'Старые'
   share_buttons:
-    text:         'Share this post!'
-    facebook:     'Share on Facebook'
-    twitter:      'Share on Twitter'
-    googleplus:   'Share on Google+'
-    linkedin:     'Share on LinkedIn'
-    digg:         'Share on Digg'
-    tumblr:       'Share on Tumblr'
-    reddit:       'Share on Reddit'
-    stumbleupon:  'Share on StumbleUpon'
-    hackernews:   'Share on Hacker News'
+    text:         'Поделись этим постом!'
+    facebook:     'Поделись на Facebook'
+    twitter:      'Поделись на Twitter'
+    googleplus:   'Поделись на Google+'
+    linkedin:     'Поделись на LinkedIn'
+    digg:         'Поделись на Digg'
+    tumblr:       'Поделись на Tumblr'
+    reddit:       'Поделись на Reddit'
+    stumbleupon:  'Поделись на StumbleUpon'
+    hackernews:   'Поделись на Hacker News'
   post:
     updated:        'Updated'
     minute_read:    'minute read'
-    related_posts:  'Related Posts'
+    related_posts:  'Похожие посты'
   index:
-    coming_soon: 'Coming soon...'
+    coming_soon: 'Уже скоро...'
   contact:
-    email:    'Email Address'
-    content:  'What would you like to say?'
+    email:    'Твой Email'
+    content:  'Напиши здесь, что-то интересное'
     subject:  'New submission!'
-    submit:   'Say Hello'
+    submit:   'Напиши мне'
     ajax:
-      sending:  'sending..'
-      sent:     'Message sent!'
-      error:    'Error!'
-  thanks: 'Thanks for contacting us. We will reply as soon as possible.'
-  og_locale: 'en_US'
+      sending:  'отправляю..'
+      sent:     'Сообщение отправлено!'
+      error:    'Ошибка!'
+  thanks: 'Спасибо, что связался со мной. Я отвечу как можно скорее.'
+  og_locale: 'ru_RU'
 
 # Build settings
 markdown:     kramdown
@@ -111,3 +111,4 @@ gems:
   - jekyll-auto-image
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
+excerpt_separator: <!--more-->
