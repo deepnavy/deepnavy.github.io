@@ -1,3 +1,14 @@
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+}
+
 window.onload = function () {
 
   'use strict';
@@ -7,10 +18,12 @@ window.onload = function () {
   var image = document.querySelector('#image');
   var download = document.getElementById('download');
   var actions = document.getElementById('actions');
-  var imageQuant = 1;
+  var imageQuant = 2;
+  var ua = window.navigator.userAgent;
+
 
   var options = {
-        aspectRatio: 16 / 9,
+        aspectRatio: 2,
         zoomable: false,
         movable: false,
         rotatable: false,
@@ -52,6 +65,11 @@ window.onload = function () {
   if (typeof document.createElement('cropper').style.transition === 'undefined') {
     $('button[data-method="rotate"]').prop('disabled', true);
     $('button[data-method="scale"]').prop('disabled', true);
+  }
+
+    // Download
+  if (typeof download.download === 'undefined') {
+    download.className += ' disabled';
   }
 
 
@@ -106,6 +124,128 @@ window.onload = function () {
       
     }
 
+    // Methods
+  actions.querySelector('.docs-buttons').onclick = function (event) {
+    var e = event || window.event;
+    var target = e.target || e.srcElement;
+    var result;
+    var input;
+    var data;
+
+    if (!cropper) {
+      return;
+    }
+
+    while (target !== this) {
+      if (target.getAttribute('data-method')) {
+        break;
+      }
+
+      target = target.parentNode;
+    }
+
+    if (target === this || target.disabled || target.className.indexOf('disabled') > -1) {
+      return;
+    }
+
+    data = {
+      method: target.getAttribute('data-method'),
+      target: target.getAttribute('data-target'),
+      option: target.getAttribute('data-option'),
+      secondOption: target.getAttribute('data-second-option')
+    };
+
+    if (data.method) {
+      if (typeof data.target !== 'undefined') {
+        input = document.querySelector(data.target);
+
+        if (!target.hasAttribute('data-option') && data.target && input) {
+          try {
+            data.option = JSON.parse(input.value);
+          } catch (e) {
+            console.log(e.message);
+          }
+        }
+      }
+
+      if (data.method === 'getCroppedCanvas') {
+        data.option = JSON.parse(data.option);
+      }
+
+      result = cropper[data.method](data.option, data.secondOption);
+
+      switch (data.method) {
+        case 'scaleX':
+        case 'scaleY':
+          target.setAttribute('data-option', -data.option);
+          break;
+
+        case 'getCroppedCanvas':
+          if (result) {
+
+            // Bootstrap's Modal
+            $('#getCroppedCanvasModal').modal().find('.modal-body').html(result);
+
+            if (!download.disabled) {
+              download.href = result.toDataURL('image/jpeg');
+            }
+          }
+
+          break;
+
+        case 'destroy':
+          cropper = null;
+
+          if (uploadedImageURL) {
+            URL.revokeObjectURL(uploadedImageURL);
+            uploadedImageURL = '';
+            image.src = originalImageURL;
+          }
+
+          break;
+      }
+
+      if (typeof result === 'object' && result !== cropper && input) {
+        try {
+          input.value = JSON.stringify(result);
+        } catch (e) {
+          console.log(e.message);
+        }
+      }
+    }
+  };
+
+    // Import image
+  var inputImage = document.getElementById('inputImage');
+
+  if (URL) {
+    inputImage.onchange = function () {
+      var files = this.files;
+      var file;
+
+      if (cropper && files && files.length) {
+        file = files[0];
+
+        if (/^image\/\w+/.test(file.type)) {
+          if (uploadedImageURL) {
+            URL.revokeObjectURL(uploadedImageURL);
+          }
+
+          image.src = uploadedImageURL = URL.createObjectURL(file);
+          cropper.destroy();
+          cropper = new Cropper(image, options);
+          inputImage.value = null;
+        } else {
+          window.alert('Please choose an image file.');
+        }
+      }
+    };
+  } else {
+    inputImage.disabled = true;
+    inputImage.parentNode.className += ' disabled';
+  }
+
+  $("#aspectRatio2").prop("checked", true)
     
     
   };
@@ -114,6 +254,12 @@ window.onload = function () {
   
 $( "#download" ).click(function() {
         var result = cropper.getCroppedCanvas();
+
+        var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+        var webkit = !!ua.match(/WebKit/i);
+        var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+
+        console.log('iOSSafari: ' + iOSSafari);
         
         console.log(result);
         // canvas context
@@ -147,8 +293,13 @@ $( "#download" ).click(function() {
 
         // write on screen
         //download.href = tempCanvas.toDataURL("image/png");
+        if (!iOSSafari){
+          downloadAll(hrefs);
+        }
+        else  {
+          iOsAddImagesOnPage(hrefs);
+        }
 
-        downloadAll(hrefs);
     });
   
     /* Download an img */
@@ -172,6 +323,7 @@ $( "#download" ).click(function() {
     /* Download all images in 'imgs'. 
     * Optionaly filter them by extension (e.g. "jpg") and/or 
     * download the 'limit' first only  */
+
     function downloadAll(links, ext, limit) {
         /* If specified, filter images by extension */
         if (ext) {
@@ -191,6 +343,25 @@ $( "#download" ).click(function() {
             var img = links[i];
             downloadOne(img, i);
         }
+    }
+
+
+    function iOsAddImagesOnPage(links){
+        var div = document.getElementById("imgsPlaceholder");
+        if (div) {
+          div.remove();
+        }
+        div = document.createElement("div");
+        div.className = "row";
+        div.id = "imgsPlaceholder";
+        document.getElementById("container").appendChild(div);
+        for (var link in links){
+          var elem = document.createElement("img");
+          elem.src = links[link];
+          div.appendChild(elem);
+        }
+
+
     }
 
     $(function () {
