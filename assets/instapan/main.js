@@ -15,6 +15,7 @@ window.onload = function () {
 
   var Cropper = window.Cropper;
   var URL = window.URL || window.webkitURL;
+  var container = document.querySelector('.container');
   var image = document.querySelector('#image');
   var download = document.getElementById('download');
   var actions = document.getElementById('actions');
@@ -354,7 +355,7 @@ $( "#download" ).click(function() {
         div = document.createElement("div");
         div.className = "row";
         div.id = "imgsPlaceholder";
-        document.getElementById("container").appendChild(div);
+        container.appendChild(div);
         for (var link in links){
           var elem = document.createElement("img");
           elem.src = links[link];
