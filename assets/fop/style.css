@@ -1,0 +1,148 @@
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.logo {
+    margin: -10px 5px;
+    display: inline !important;
+}
+.non-border {
+    border: 0 !important;
+}
+.half-rule
+{    width: 100px;
+    margin: 40px auto;
+}
+.json-key {
+    color: #000000;
+    font-weight: 600;
+}
+.json-value {
+    color: navy;
+}
+.json-string {
+    color: #00803f;
+    font-weight: 600;
+}
+.top-buffer {
+    margin-top:15px;
+}
+.top-links {
+    margin-top: 20px;
+}
+
+.preloader {
+    width: 50px;
+    height: 50px;
+    background: url(/images/preloader.gif) no-repeat;
+    background-size: contain;
+}
+
+.insert {
+    font-size: 14px;
+}
+
+@media (min-width: 991px) {
+    .reload .insert {
+        font-size: 8px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .reload .insert {
+        display: none;
+    }
+    .reload h3 {
+        font-size: 12px;
+    }
+    .reload button {
+        width: 60px;
+        font-size: 6px;
+    }
+}
+
+@media (min-width: 480px) {
+    .full-img {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .fb-iframe {
+        width: 346px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 991px) {
+    .botlink {
+        padding-bottom: 16px;
+    }
+    #iframe {
+        width: 400px;
+        height: 500px;
+    }
+}
+
+footer p {
+    margin-bottom: 0 !important;
+}
+
+@media (min-width: 768px) {
+    .bs-docs-footer {
+        text-align: left !important;
+    }
+}
+
+.bs-docs-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 100px;
+    color: #99979c;
+    text-align: center;
+    background-color: #2a2730;
+}
+
+.bs-docs-footer a {
+    color: #fff;
+}
+
+.bs-docs-footer-links {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.bs-docs-footer-links li {
+    display: inline-block;
+}
+
+.bs-docs-footer-links li+li {
+    margin-left: 15px;
+}
+.full-width {
+    width: 100%;
+}
+
+#loser-email {
+    font-size: 12px;
+}
+
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 60px; overflow: hidden;
+}
+
+
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.payment-message-wait {
+    display: none;
+}

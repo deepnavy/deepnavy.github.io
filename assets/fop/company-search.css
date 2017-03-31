@@ -1,0 +1,138 @@
+.company-search-popup{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    left: 0px;
+    z-index: 100;
+    color: #FFFFFF;
+    padding: 40px;
+}
+
+.company-search-popup-content h3 {
+    padding: 25px;
+}
+
+.full-company-popup{
+    display: none;
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0, 0, 0, 0.78);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    left: 0px;
+    z-index: 10000;
+}
+
+.full-info {
+    padding: 0 30px;
+    cursor: auto;
+}
+
+.full-company-popup .full-company-search-popup-content{
+    margin:40px auto 0px auto;
+    width: 70%;
+    height: 100%;
+    padding:10px;
+    background-color: #e4e4e2;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.company-search-popup .company-search-popup-content{
+    margin-top: 20px;
+    height: 860px;
+}
+
+.company-search-popup-content{
+    overflow: scroll;
+}
+
+#hide-company-popup, #hide-full-company-popup {
+    cursor: pointer;
+    float: right;
+    margin-right: 30px;
+}
+
+.header-search-input {
+    font-size: 50px;
+    line-height: 45px;
+    background: transparent;
+    border: medium none;
+    height: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.header-search-input:focus {
+    outline: none;
+}
+
+#short-info, #short-info-fop {
+    cursor: pointer;
+}
+
+#short-info a:hover {
+    background-color: #428bca;
+    color: #ededed;
+}
+
+#short-info-fop a:hover {
+    background-color: #94b5d2;
+    color: #ffffff;
+}
+
+.bot-link {
+    background-color: rgba(217, 223, 228, 0.66);
+    color: #000000;
+    border-radius: 2px;
+    margin: 0 10px 10px 0;
+}
+
+active-company {
+    background-color: rgba(217, 223, 228, 0.66);
+}
+
+.transparent {
+    width:100%;
+    min-height:100%;
+    /*background-color: rgba(232, 232, 232, 0.78);*/
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    left: 0px;
+    /*z-index: 10000;*/
+    padding-top: 20px;
+}
+
+#search-company-back {
+    cursor: pointer;
+}
+
+/*.dropdown-menu {*/
+    /*background-color: rgba(249, 248, 248, 0.85) !important;*/
+/*}*/
+
+.dropdown-menu>li>a {
+    white-space: normal !important;
+}
+
+.date-info {
+    padding-right: 10px;
+}
+
+.info-date {
+    color: brown;
+}
+
+.loader {
+    display: block;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    background: url(/images/preloader.gif) no-repeat;
+    background-size: contain;
+}
