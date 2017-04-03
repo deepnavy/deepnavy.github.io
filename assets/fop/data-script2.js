@@ -66,6 +66,7 @@ function(err, rawData) {
           pointRadius: 2,
           pointBackgroundColor: '#E55934',
           backgroundColor: '#E55934',
+          pointHitRadius: 7,
         }]
       },
       options: {
@@ -120,6 +121,7 @@ function(err, rawData) {
           pointRadius: 2,
           pointBackgroundColor: '#9BC53D',
           backgroundColor: '#9BC53D',
+          pointHitRadius: 7,
         }]
       },
       options: {
