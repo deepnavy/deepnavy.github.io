@@ -57,6 +57,7 @@ function(err, rawData) {
           pointRadius: 2,
           pointBackgroundColor: '#9BC53D',
           backgroundColor: '#9BC53D',
+          pointHitRadius: 7,
         }, {
           fill: false,
           label: 'Закрито',
