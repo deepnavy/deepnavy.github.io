@@ -159,7 +159,9 @@ function(err, rawData) {
     };
 
     var ctx = document.getElementById('openCloseChart').getContext('2d');
-    var myChart = new Chart(ctx, options);
+    var myChart = new Chart(ctx, options, {
+        tooltipEvents: ["mousemove", "touchstart", "touchmove"],
+    });
 
     var ctx2 = document.getElementById('qChart').getContext('2d');
     var myChart2 = new Chart(ctx2, options2, {
