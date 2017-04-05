@@ -264,54 +264,9 @@ function(err, rawData) {
             type: 'line',
             mode: 'vertical',
             scaleID: 'y-axis-0',
-            value: 1,
+            value: '25',
             borderColor: 'red',
             borderWidth: 2,
-            borderDash: [2, 2],
-            label: {
-              // Background color of label, default below
-              backgroundColor: 'rgba(0,0,0,0.8)',
-
-              // Font family of text, inherits from global
-              fontFamily: "sans-serif",
-
-              // Font size of text, inherits from global
-              fontSize: 12,
-
-              // Font style of text, default below
-              fontStyle: "bold",
-
-              // Font color of text, default below
-              fontColor: "#fff",
-
-              // Padding of label to add left/right, default below
-              xPadding: 6,
-
-              // Padding of label to add top/bottom, default below
-              yPadding: 6,
-
-              // Radius of label rectangle, default below
-              cornerRadius: 6,
-
-              // Anchor position of label on line, can be one of: top, bottom, left, right, center. Default below.
-              position: "center",
-
-              // Adjustment along x-axis (left-right) of label relative to above number (can be negative)
-              // For horizontal lines positioned left or right, negative values move
-              // the label toward the edge, and negative values toward the center.
-              xAdjust: 0,
-
-              // Adjustment along y-axis (top-bottom) of label relative to above number (can be negative)
-              // For vertical lines positioned top or bottom, negative values move
-              // the label toward the edge, and negative values toward the center.
-              yAdjust: 0,
-
-              // Whether the label is enabled and should be displayed
-              enabled: true,
-
-              // Text to display in label - default is null
-              content: "Закон прийнято"
-            },
 
             // Fires when the user clicks this annotation on the chart
             // (be sure to enable the event in the events array below).
@@ -332,9 +287,17 @@ function(err, rawData) {
           // Should be an array of one or more browser-supported mouse events
           // See https://developer.mozilla.org/en-US/docs/Web/Events
           events: ['click'],
+
+          // Double-click speed in ms used to distinguish single-clicks from 
+          // double-clicks whenever you need to capture both. When listening for
+          // both click and dblclick, click events will be delayed by this
+          // amount.
+          dblClickSpeed: 350 // ms (default)
         }
       }
     };
+
+    
 
     var ctx = document.getElementById('openCloseChart').getContext('2d');
 

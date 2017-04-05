@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://opendatabot.com/fop -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Відслідковуйте закриття ФОПів в&nbsp;реальному часі (оновлення 27.03)</title>
+        
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="noindex">
+
+                        <meta property="og:url" content="https://opendatabot.com/fop">
+            <meta property="og:title" content="Відслідковуйте закриття ФОПів в реальному часі (оновлення 27.03)">
+                            <meta property="og:description" content="З моменту підписання закону кількість приватних пдіприємців зменьшилась на 253 тисяч">
+                        <meta property="og:image" content="https://drfw5o9qqiceq.cloudfront.net/dynamic/assets/0/613.png">
+            
+    <link rel="stylesheet" href="/assets/fop/bootstrap.min.css">
+    <link href="/assets/fop/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/fop/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/assets/fop/style.css">
+                <!--    <link rel="stylesheet" href="/styles/docs.min.css">-->
+    <link rel="stylesheet" href="/assets/fop/company-search.css">
+    <link rel="stylesheet" href="/assets/fop/jquery-ui.min.css">
+
+    <!-- additional bootstrap css for callouts -->
+     <link rel="stylesheet" href="/assets/fop/bootstrapdocs.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <script async="" src="/assets/fop/analytics.js"></script><script src="/assets/fop/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
+    <script src="/assets/fop/jquery.min.js"></script>
+    <script src="/assets/fop//bootstrap.min.js"></script>
+    <script src="/assets/fop/jquery.tablesorter.js"></script>
+    <script src="/assets/fop/clipboard.min.js"></script>
+    <script src="/assets/fop/jquery-ui.min.js"></script>
+    <script src="/assets/fop/script.js"></script>
+    <script src="/assets/fop/moment-with-locales.min.js"></script>
+    <script src="/assets/fop/bootstrap-datetimepicker.min.js"></script>
+    <!-- dependencies for charts js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="/assets/fop/chartjs-plugin-annotation.min.js"></script>
+    <!-- d3js map dependencies -->
+    <script src="/assets/fop/colorbrewer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+    <script src="/assets/fop/tooltip.js"></script>
+    
+    <!-- jQuery library -->
+
+    <!-- Latest compiled JavaScript -->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1113296-93', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</head>
+<body cz-shortcut-listen="true">
+
+    <div class="navbar-inverse" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://opendatabot.com/" class="navbar-brand"><img src="/assets/fop/logo.png" class="img-circle logo" width="36" height="36">Opendatabot</a>
+<!--                <a href="/"><img src="/images/odb.png" class="logo"></a>-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                                        <li></li>
+                    <li>
+                                                    <a href="https://opendatabot.com/fop">Закриття ФОП</a>
+                                            </li>
+                    <li>
+                                                    <a href="https://opendatabot.com/blog">Відкриті дані</a>
+                                            </li>
+                    <li>
+                                                    <a href="https://opendatabot.com/blog/27-api-for-all">API</a>
+                                            </li>
+                    <li>
+                                                    <a href="https://telegram.me/OpenDeclarationBot">Бот декларацій</a>
+                                            </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                                                    <a href="https://opendatabot.com/fop#" class="dropdown-toggle" data-toggle="dropdown">Українська <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://opendatabot.com/ru">Русский</a></li>
+                                <li><a href="https://opendatabot.com/en">English</a></li>
+                            </ul>
+                                            </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+<div class="row"><div class="col-sm-2"></div><div class="col-sm-8">
+    
+            <h3>Припинення ФОП за областями на 03.04.2017</h3>
+
+            <div id="map">
+
+            </div>
+
+
+    <!-- sript for map d3 -->
+    <script type="x-jst" id="tooltip-template">
+        <h5><%= region %></h5>
+        <p><b>Активних: </b><font color="#9BC53D"><%= active %></font> </p>
+        <p><b>Закрито: </b><font color="#E55934"><%= count %></font> </p>
+        <p><b>Частка: </b><%= share %> </p>
+    </script>
+
+    <script src="/assets/fop/data-script-map.js"></script>
+
+<p>Додаткова інформація: припинення ФОП за <a href="https://opendatabot.com/statistics/closefop">областями України</a> та за <a href="https://opendatabot.com/statistics/classes_dead_fop">галузями</a></p>
+
+<p>Контролювати статус свого ФОП в OpenDataBot <a href="https://telegram.me/OpenDataUABot?start=source_webcom">Telegram</a>, <a href="http://m.me/OpenDataBot?ref=source_webcom">Facebook Messenger</a>, <a href="https://join.skype.com/bot/34fa3a55-00ae-4d50-873c-6a2cd41dab78">Skype</a> та&nbsp;<a href="http://chats.viber.com/opendatabot">Viber</a>.</p></div></div></div></div>
+<hr class="half-rule">
+<div class="starter-template text-center">
+            <h2>Початок роботи</h2>
+        <p class="lead">Додайте OpenDataBot до улюбленного мессенджеру</p>
+    </div>
+<div class="lyrow">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12 botlink">
+            <div class="thumbnail non-border">
+                <a href="https://join.skype.com/bot/34fa3a55-00ae-4d50-873c-6a2cd41dab78" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Skype&#39;);">
+                    <img src="./fop_files/skype.png" width="120">
+                </a>
+                <div class="caption text-center">
+                                            <p>OpenDataBot для Skype</p>
+                                        <p>
+                        <a href="https://join.skype.com/bot/34fa3a55-00ae-4d50-873c-6a2cd41dab78" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Skype&#39;);" class="btn btn-primary" role="button">
+                                                            ДОДАТИ
+                                                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 botlink">
+            <div class="thumbnail non-border">
+                <a href="http://m.me/OpenDataBot?ref=source_webcom" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Facebook&#39;);">
+                    <img src="./fop_files/fb.png" width="120">
+                </a>
+                <div class="caption text-center">
+                                            <p>OpenDataBot для Facebook</p>
+                                        <p>
+                        <a href="http://m.me/OpenDataBot?ref=source_webcom" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Facebook&#39;);" class="btn btn-primary" role="button">
+                                                            ДОДАТИ
+                                                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 botlink">
+            <div class="thumbnail non-border">
+                <a href="https://telegram.me/OpenDataUABot?start=source_webcom" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Telegram&#39;);">
+                    <img src="./fop_files/tgm.png" width="120">
+                </a>
+                <div class="caption text-center">
+                                            <p>OpenDataBot для Telegram</p>
+                                        <p>
+                        <a href="https://telegram.me/OpenDataUABot?start=source_webcom" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Telegram&#39;);" class="btn btn-primary" role="button">
+                                                            ДОДАТИ
+                                                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 botlink">
+            <div class="thumbnail non-border">
+                <a href="http://viber.com/opendatabot" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Viber&#39;);">
+                    <img src="./fop_files/viber.png" width="120">
+                </a>
+                <div class="caption text-center">
+                                            <p>OpenDataBot для Viber</p>
+                                        <p>
+                        <a href="http://viber.com/opendatabot" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Viber&#39;);" class="btn btn-primary" role="button">
+                                                            ДОДАТИ
+                                                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><hr class="half-rule">
+<div class="row text-center full-width">
+    <iframe src="./fop_files/like.html" class="fb-iframe" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+</div>    </div>
+    <footer class="bs-docs-footer">
+        <div class="container">
+                            <p>Электрона пошта: <a href="mailto:mail@opendatabot.com">mail@opendatabot.com</a></p>
+                <p>Телефон: <nobr>+380 93 160-83-45</nobr></p>
+                <p>Україна, Дніпро, вул. Мечникова 10б, офіс 402</p>
+                        <ul class="bs-docs-footer-links top-links">
+                                    <li><a href="https://opendatabot.com/page/policy">Політика приватності</a></li>
+                    <li><a href="https://opendatabot.com/page/terms">Умови користування</a></li>
+                    <li><a href="https://opendatabot.com/blog/27-api-for-all">Розробникам</a></li>
+                                <li><a href="https://drive.google.com/drive/folders/0B-1iEoUpEQl0eFdNVGptTjh4dVUhttps://drive.google.com/drive/folders/0B-1iEoUpEQl0eFdNVGptTjh4dVU">Press-kit</a></li>
+            </ul>
+            <p>©&nbsp;Opendatabot, 2016—2017</p>
+            <p>Всі матеріали на цьому сайті розміщені на умовах <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode.uk">ліцензії Creative Commons Із Зазначенням Авторства 4.0 Міжнародна</a></p>
+        </div>
+
+        
+
+    </footer>
+
+
+</body></html>

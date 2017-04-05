@@ -82,3 +82,77 @@
   /* Control the thikness of your lines */
   stroke-width: 1px;
 }
+
+/* d3 */
+
+
+svg {
+    background-color: #fff;
+}
+
+.country {
+    fill: #eee;
+}
+
+.country.UKR {
+    fill: #fff;
+    stroke: #aaa;
+    stroke-width: 2px;
+}
+
+.coastline, .country-boundary {
+    fill: none;
+    stroke: #aaa;
+}
+
+.region {
+    fill: #fff;
+}
+
+.region.selected {
+    fill: rgba(252, 248, 227, 0.8);
+}
+
+.region-boundary {
+    fill: none;
+    stroke: #fff;
+    /*stroke-dasharray: 2,2;*/
+    stroke-linejoin: round;
+}
+
+.region-boundary.selected {
+    stroke-dasharray: none;
+}
+
+ .river, .lake {
+    stroke: rgb(83, 168, 231);
+}
+
+.coastline, .river {
+    fill: none;
+}
+
+.lake {
+    fill: rgb(191, 216, 242);
+}
+
+.regions-list {
+    padding-left: 1em;
+    column-width: 14em;
+    -webkit-column-width: 14em;
+    -moz-column-width: 14em;
+}
+
+#map {
+  margin: 20px 0;
+}
+
+/* tooltip customization*/
+
+.tooltip-inner {
+  text-align: left;
+}
+
+.tooltip-inner p {
+  margin-bottom: 0px;
+}
