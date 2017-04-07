@@ -226,7 +226,7 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
 
                 cells
                     .filter(function(d) { return d.column != 'number' })
-                    .attr("class", "text-right");
+                    .attr("class", "text-right"); 
 
                     
 
@@ -234,7 +234,7 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
                     .filter(function(d) { return d != 'Клас' })
                     .attr("class", "text-right");
 
-                console.log(thead);
+
 
             return table;
             }
