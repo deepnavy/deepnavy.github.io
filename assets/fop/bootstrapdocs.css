@@ -156,3 +156,15 @@ svg {
 .tooltip-inner p {
   margin-bottom: 0px;
 }
+
+.classesBarBase div, .classesBarBase p {
+  float: left;
+}
+
+.classesBarBase p {
+  line-height: 2.2em;
+  font-size: 12px;
+  margin: 0 5px;
+  font-weight: bold;
+  color: #892612;
+}

@@ -144,6 +144,8 @@ function(err, rawData) {
       },
       options: {
         tooltips: {
+            intersect: true,
+            mode: 'label',
             callbacks: {
                 title: function(tooltipItems, data) {
                   
@@ -186,7 +188,7 @@ function(err, rawData) {
 
             ticks: {
                 autoSkip: true,
-                maxTicksLimit: 10
+                maxTicksLimit: 4
             }
 
             /*ticks: {
@@ -197,7 +199,6 @@ function(err, rawData) {
                 }*/
           }],
           yAxes: [{
-            stacked: true,
             /*ticks: {
               min: -90000
             },*/

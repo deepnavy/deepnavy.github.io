@@ -55,6 +55,8 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
     function processData(error, statsMap, statsClasses, mapData) {
         if (error) return console.error(error);
 
+        
+
     var template = _.template(d3.select('#tooltip-template').html());
 
     var colors = d3.scale.quantize()
@@ -153,6 +155,7 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
 
     console.log(typeof(statsClasses));
 
+    statsClasses.items = statsClasses.items.slice(0, 10)
 
      var statsClassesReMapped = statsClasses.items.map(function(d) {
         
@@ -173,9 +176,10 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
 
     console.log('Mobile: ' + mobile);
     //create classes table
-        data = statsClasses.items;
+        //data = statsClasses.items;
+        data = statsClassesReMapped
          console.log(data);
-        function tabulate(data, columns, names) {
+        /*function tabulate(data, columns, names) {
                 var table = d3.select('#classesTable').append('table').attr("class", "table insert");
                 var thead = table.append('thead')
                 var	tbody = table.append('tbody');
@@ -237,11 +241,131 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
 
 
             return table;
+        }*/
+
+            function tabulate(data, columns, names) {
+                var table = d3.select('#classesTable').append('table').attr("class", "table insert");
+                var thead = table.append('thead')
+                var	tbody = table.append('tbody');
+
+                // append the header row
+                thead.append('tr')
+                .selectAll('th')
+                .data(names).enter()
+                .append('th')
+                    .text(function (column) { return column; });
+                     /*.filter(function(d) { return d != 'Клас' })
+                    .attr("class", "text-right");;*/
+
+            
+
+                // create a row for each object in the data
+                var rows = tbody.selectAll('tr')
+                .data(data)
+                .enter()
+                .append('tr');
+
+                // create a cell in each row for each column
+                var cells = rows.selectAll('td')
+                .data(function (row) {
+                    return columns.map(function (column) {
+                    return {column: column, value: row[column]};
+                    });
+                })
+                .enter()
+                .append('td');
+
+                cells
+                    .filter(function(d) { return d.column == 'classes' })
+                    .text(function (d) { return d.value; }
+                    );
+
+                cells
+                    .filter(function(d) { return d.column == 'values' })
+                    .style("width", "50%");
+
+                
+                
+                var cellDivsBase = cells
+                    .filter(function(d) { return d.column == 'values' })
+                    .append('div');
+
+
+                cellDivsBase
+                    .style('height', '25px')
+                    .style('background-color', '#9BC53D')
+                    .attr("class", "classesBarBase");
+
+                cellDivsPercent = cellDivsBase
+                    .append('div')
+                    .each(function(d){
+
+                    });
+
+                cellDivsPercent
+                    .style('height', '25px')
+                    .style("width", function(d){
+                        console.log(d.value.share);
+                        return d.value.share + "%";
+                    })
+                    .style('background-color', '#E55934');
+
+                cellDivsBase
+                    .append('p')
+                    .each(function(d){
+                        console.log('text');
+                        console.log(d);
+                    }).append("text")
+                    .text( function (d){
+                        return d.value.closed; 
+                    }
+                    );
+
+                cellDivsBase
+                    .append('p')
+                    .each(function(d){
+                        console.log('text');
+                        console.log(d);
+                    })
+                    .style("float", "right")
+                    .style("color", "#111")
+                    .append("text")
+                    .text( function (d){
+                        return d.value.active; 
+                    }
+                    );
+
+                
+
+                /*cells
+                    .filter(function(d) { return d.column == 'share' })
+                    .style('background-color', function(d) {
+                        return colors(d.value);
+                    })
+                    .filter(function(d) { return d.value > 28 })
+                    .style('color', function(d) {
+                        return '#fff';
+                    })
+                
+
+                cells
+                    .filter(function(d) { return d.column != 'number' })
+                    .attr("class", "text-right"); 
+
+                    
+
+                thead
+                    .filter(function(d) { return d != 'Клас' })
+                    .attr("class", "text-right");*/
+
+
+
+            return table;
             }
 
             // render the table(s)
-            //tabulate(data, ['number', 'values'], ['Клас', 'Частка (%)']); 
-            tabulate(data, ['number', 'active', 'count', 'share'], ['Клас', 'Було', 'Закрилось', 'Частка (%)']); // 2 column table
+            tabulate(data, ['classes', 'values'], ['Клас', 'Закрилось / Активно']); 
+            //tabulate(data, ['number', 'active', 'count', 'share'], ['Клас', 'Було', 'Закрилось', 'Частка (%)']); // 2 column table
 
 
     function tooltipShow(d, i) {
