@@ -215,7 +215,7 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
 
                 cells
                     .filter(function(d) { return d.column == 'share' })
-                    .style('fill', function(d) {
+                    .style('backgroud-color', function(d) {
                         return colors(d.value);
                     });
 
