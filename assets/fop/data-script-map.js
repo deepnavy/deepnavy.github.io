@@ -215,9 +215,14 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
 
                 cells
                     .filter(function(d) { return d.column == 'share' })
-                    .style('backgroud-color', function(d) {
+                    .style('background-color', function(d) {
                         return colors(d.value);
-                    });
+                    })
+                    .filter(function(d) { return d.value > 28 })
+                    .style('color', function(d) {
+                        return '#fff';
+                    })
+                
 
                 cells
                     .filter(function(d) { return d.column != 'number' })
