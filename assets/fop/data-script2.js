@@ -1,5 +1,8 @@
 moment.locale('uk');
 
+// number of weeks to cut from the end of dataset
+var weeksToFollow = 15;
+
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -53,11 +56,11 @@ function(err, rawData) {
     var options = {
       type: 'line',
       data: {
-        labels: date.slice(-15, date.length),
+        labels: date.slice(-weeksToFollow, date.length),
         datasets: [{
           fill: false,
           label: 'Відкрито',
-          data: count_new.slice(-15, count_new.length),
+          data: count_new.slice(-weeksToFollow, count_new.length),
           borderColor: '#9BC53D',
           borderWidth: 3,
           pointRadius: 2,
@@ -67,7 +70,7 @@ function(err, rawData) {
         }, {
           fill: false,
           label: 'Закрито',
-          data: count_close.slice(-15, count_close.length),
+          data: count_close.slice(-weeksToFollow, count_close.length),
           borderColor: '#E55934',
           borderWidth: 3,
           pointRadius: 2,
@@ -78,8 +81,9 @@ function(err, rawData) {
       },
       options: {
         tooltips: {
+            bodySpacing: 6,
             intersect: true,
-            mode: 'label',
+            mode: 'index',
             callbacks: {
                 title: function(tooltipItems, data) {
                   
@@ -87,7 +91,7 @@ function(err, rawData) {
                 },
 
                 label: function(tooltipItems, data) {
-                    return  data.datasets[tooltipItems.datasetIndex].label + ": " +
+                    return " " +  data.datasets[tooltipItems.datasetIndex].label + ": " +
                     Math.abs(data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index]) +
                     ' ФОП';
                 }
@@ -103,7 +107,7 @@ function(err, rawData) {
             gridLines: {
               display: false
             },
-            type: 'time',
+            /*type: 'time',
             time: {
               displayFormats: {
                         'millisecond': 'MMM',
@@ -123,7 +127,7 @@ function(err, rawData) {
             ticks: {
                 autoSkip: true,
                 maxTicksLimit: 4
-            }
+            }*/
 
             /*ticks: {
                     // Create scientific notation labels
@@ -131,6 +135,24 @@ function(err, rawData) {
                         return moment(value).format('MMM');
                     }
                 }*/
+
+              ticks: {
+              maxRotation: 0,
+                stepSize:400,
+                autoSkip: true,
+                maxTicksLimit: 5,
+
+                callback: function(value, index, values) {
+                        return moment(value).format("MMMM");
+                },
+
+            },
+            afterFit: function(humdaysChart) {    
+                  console.log(humdaysChart.ticks);
+                  humdaysChart.ticks.pop();
+                  humdaysChart.ticks.pop();
+
+                }
           }],
           yAxes: [{
             /*ticks: {
@@ -147,11 +169,11 @@ function(err, rawData) {
     var options2 = {
       type: 'line',
       data: {
-        labels: date.slice(-15, date.length),
+        labels: date.slice(-weeksToFollow, date.length),
         datasets: [{
           fill: false,
           label: 'Зареєстровано',
-          data: countTotal.slice(-15, countTotal.length),
+          data: countTotal.slice(-weeksToFollow, countTotal.length),
           borderColor: '#9BC53D',
           borderWidth: 3,
           pointRadius: 2,
@@ -167,32 +189,64 @@ function(err, rawData) {
         legend: {
             display: false,
         },
+        tooltips: {
+            bodySpacing: 6,
+            intersect: true,
+            mode: 'index',
+            callbacks: {
+                title: function(tooltipItems, data) {
+                  
+                    return moment(data.labels[tooltipItems[0].index]).format('DD MMMM YYYY');
+                },
+
+                label: function(tooltipItems, data) {
+                    return " " +  data.datasets[tooltipItems.datasetIndex].label + ": " +
+                    Math.abs(data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index]) +
+                    ' ФОП';
+                }
+            }
+        },
         scales: {
           xAxes: [{
             gridLines: {
               display: false
             },
-            type: 'time',
+            
+            /*type: 'time',
             time: {
+              //unitStepSize: 40,
               displayFormats: {
-                        'millisecond': 'MMM',
-                        'second': 'MMM',
-                        'minute': 'MMM',
-                        'hour': 'MMM',
-                        'day': 'MMM',
-                        'week': 'MMM',
-                        'month': 'MMM',
-                        'quarter': 'MMM',
-                        'year': 'MMM',
+                        'millisecond': 'MMMM',
+                        'second': 'MMMM',
+                        'minute': 'MMMM',
+                        'hour': 'MMMM',
+                        'day': 'MMMM',
+                        'week': 'MMMM',
+                        'month': 'MMMM',
+                        'quarter': 'MMMM',
+                        'year': 'MMMM',
                     },
               tooltipFormat: 'DD MMMM YYYY'
 
-            },
+            },*/
 
             ticks: {
+              maxRotation: 0,
+                stepSize:400,
                 autoSkip: true,
-                maxTicksLimit: 4
-            }
+                maxTicksLimit: 5,
+
+                callback: function(value, index, values) {
+                        return moment(value).format("MMMM");
+                },
+
+            },
+            afterFit: function(humdaysChart) {    
+                  console.log(humdaysChart.ticks);
+                  humdaysChart.ticks.pop();
+                  humdaysChart.ticks.pop();
+
+                }
           }],
           yAxes: [{
             gridLines: {
@@ -254,6 +308,10 @@ function(err, rawData) {
     var ctx2 = document.getElementById('qChart').getContext('2d');
     var myChart2 = new Chart(ctx2, options2, {
         tooltipEvents: ["mousemove", "touchstart", "touchmove"],
+        scaleOverride:true,
+  scaleSteps:9,
+  scaleStartValue:0,
+  scaleStepWidth:100
     });
   }
 });

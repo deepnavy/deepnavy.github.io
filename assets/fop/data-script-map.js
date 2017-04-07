@@ -166,6 +166,7 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
                     active: d.active,
                     closed: d.count,
                     share: d.share,
+                    diff: d.diff
                     //value: d["y"+year],
                 },
         }
@@ -331,7 +332,7 @@ if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.u
                     .style("color", "#111")
                     .append("text")
                     .text( function (d){
-                        return d.value.active; 
+                        return d.value.diff; 
                     }
                     );
 
