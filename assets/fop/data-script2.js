@@ -48,73 +48,7 @@ function(err, rawData) {
     
 
 
-    var optionsline = {
-      type: 'bar',
-      data: {
-        labels: date.slice(-15, date.length),
-        datasets: [{
-          fill: false,
-          label: 'Відкрито',
-          data: count_new.slice(-15, count_new.length),
-          borderColor: '#9BC53D',
-          borderWidth: 3,
-          pointRadius: 2,
-          pointBackgroundColor: '#9BC53D',
-          backgroundColor: '#9BC53D',
-          pointHitRadius: 7,
-        }, {
-          fill: false,
-          label: 'Закрито',
-          data: count_close.slice(-15, count_close.length),
-          borderColor: '#E55934',
-          borderWidth: 3,
-          pointRadius: 2,
-          pointBackgroundColor: '#E55934',
-          backgroundColor: '#E55934',
-          pointHitRadius: 7,
-        }]
-      },
-      options: {
 
-        maintainAspectRatio: false,
-        legend: {
-            position: 'bottom'
-        },
-        scales: {
-          xAxes: [{
-            barThickness: 6,
-            gridLines: {
-              display: false
-            },
-            type: 'time',
-            time: {
-              displayFormats: {
-                        'millisecond': 'DD.MM',
-                        'second': 'DD.MM',
-                        'minute': 'DD.MM',
-                        'hour': 'DD.MM',
-                        'day': 'DD.MM',
-                        'week': 'DD.MM',
-                        'month': 'DD.MM',
-                        'quarter': 'DD.MM',
-                        'year': 'DD.MM',
-                    },
-              tooltipFormat: 'DD MMMM YYYY'
-
-            }
-          }],
-          yAxes: [{
-            stacked: true,
-            /*ticks: {
-              min: -90000
-            },*/
-            gridLines: {
-              borderDash: [3, 3]
-            },
-          }]
-        },
-      }
-    };
 
     var options = {
       type: 'line',
@@ -241,18 +175,23 @@ function(err, rawData) {
             type: 'time',
             time: {
               displayFormats: {
-                        'millisecond': 'DD.MM',
-                        'second': 'DD.MM',
-                        'minute': 'DD.MM',
-                        'hour': 'DD.MM',
-                        'day': 'DD.MM',
-                        'week': 'DD.MM',
-                        'month': 'DD.MM',
-                        'quarter': 'DD.MM',
-                        'year': 'DD.MM',
+                        'millisecond': 'MMM',
+                        'second': 'MMM',
+                        'minute': 'MMM',
+                        'hour': 'MMM',
+                        'day': 'MMM',
+                        'week': 'MMM',
+                        'month': 'MMM',
+                        'quarter': 'MMM',
+                        'year': 'MMM',
                     },
               tooltipFormat: 'DD MMMM YYYY'
 
+            },
+
+            ticks: {
+                autoSkip: true,
+                maxTicksLimit: 4
             }
           }],
           yAxes: [{
