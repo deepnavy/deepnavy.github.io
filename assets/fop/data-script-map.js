@@ -1,4 +1,11 @@
-window.onload = function () {
+var mobile = false;
+
+if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  mobile = true;
+  // viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0,window.screen.availHeight);
+  // console.log(document.documentElement,window,window.screen.availHeight);
+}
+
 
     regionsAlignment = {
         "crimea": "Автономна Республіка Крим",
@@ -38,46 +45,15 @@ window.onload = function () {
 
     function loadData() {
         queue()
-        .defer(d3.json, "https://opendatabot.com/api/statistics/CloseFop")  // карта в topoJSON-формате
+        .defer(d3.json, "https://opendatabot.com/api/statistics/CloseFop")  
+        .defer(d3.json, "https://opendatabot.com/api/statistics/CloseFopClasses")  
         .defer(d3.json, "/assets/fop/ukraine.json")  
-        .await(processData);  // обработка загруженных данных
+        .await(processData);  
     }
 
-    /*var width, height, svg, path;
 
-    width = 818, height = 400;*/
-
-    function processData(error, stats, mapData) {
+    function processData(error, statsMap, statsClasses, mapData) {
         if (error) return console.error(error);
-        console.log(stats);
-        console.log(mapData);
-
-        /*svg = d3.select('#map').append('svg')
-            .attr('width', width)
-            .attr('height', height);
-
-        var mercator = d3.geo.mercator()
-            .scale(450)
-            .translate([120, height / 2 + 400]);
-
-        var path = d3.geo.path().projection(mercator);
-
-        var world = topojson.feature(mapData, mapData.objects.ukraine);
-
-        console.log(world)
-
-        svg.append("path")
-        .datum(world)
-        .attr("d", path);
-
-        var map = svg.append("g");
-        map.selectAll(".country")
-        .data(world.features)
-        .enter()
-        .append("path")
-        .attr("class", "country")
-        .attr("d", path);
-    }*/
 
     var template = _.template(d3.select('#tooltip-template').html());
 
@@ -86,7 +62,7 @@ window.onload = function () {
 
     colors.domain([
         0, 
-        d3.max(d3.values(stats.items), function(d) { return d.share + 10; })
+        d3.max(d3.values(statsMap.items), function(d) { return d.share + 10; })
     ]);
     
 
@@ -106,8 +82,6 @@ window.onload = function () {
         .attr("height", height);
 
     d3.select(window).on('resize', resize);
-
-
 
     var projection = d3.geo.conicEqualArea()
         .center([0, geometry_center.latitude])
@@ -142,25 +116,7 @@ window.onload = function () {
             .attr("class", function(d) { return "country " + d.id; })
             .attr("d", path);
 
-        
-
-        /*var water_group = svg.append("g")
-            .attr("id", "water-resources");
-
-        
-
-        // Add lakes after rivers so that river lines connect reservoirs, not cross them.
-        var lakes = topojson.feature(ukraine_data, ukraine_data.objects.lakes);
-        water_group.selectAll(".lake")
-            .data(lakes.features)
-        .enter().append("path")
-            .attr("class", "lake")  // Note: not necessary a lake, it can be a reservoir.
-            .attr("name", function(d) { return d.properties.name; })
-            .attr("d", path);*/
-
         var regions = topojson.feature(ukraine_data, ukraine_data.objects.regions);
-
-        console.log(regions.features);
         
         //link map and data
         regionsNames = []
@@ -168,17 +124,13 @@ window.onload = function () {
             regionsNames.push(item.id)
         });
 
-        console.log(regionsNames);
-
         for (var i in regions.features) {
-            for (var j in stats.items) {
-                if (regionsAlignment[regions.features[i].id] == stats.items[j].region){
-                    regions.features[i]['regionData'] = stats.items[j];
+            for (var j in statsMap.items) {
+                if (regionsAlignment[regions.features[i].id] == statsMap.items[j].region){
+                    regions.features[i]['regionData'] = statsMap.items[j];
                 }
             }
         }
-
-        console.log(regions.features);
 
         var regionsOnMap = svg.selectAll("path.region")
             .data(regions.features)
@@ -187,7 +139,6 @@ window.onload = function () {
             .attr("id", function(d) { return d.id; })
             .attr("d", path)
             .style('fill', function(d) {
-                console.log(d.properties);
                 return colors(d.regionData.share);
             });
         svg.append("path")
@@ -199,6 +150,94 @@ window.onload = function () {
         .on('mouseout', tooltipHide);
         
     });
+
+    console.log(typeof(statsClasses));
+
+
+     var statsClassesReMapped = statsClasses.items.map(function(d) {
+        
+        return {
+            classes: d.number,
+            values: 
+                 {
+                    active: d.active,
+                    closed: d.count,
+                    share: d.share,
+                    //value: d["y"+year],
+                },
+        }
+    });
+
+    console.log(statsClassesReMapped);
+
+
+    console.log('Mobile: ' + mobile);
+    //create classes table
+        data = statsClasses.items;
+         console.log(data);
+        function tabulate(data, columns, names) {
+                var table = d3.select('#classesTable').append('table').attr("class", "table insert");
+                var thead = table.append('thead')
+                var	tbody = table.append('tbody');
+
+                // append the header row
+                thead.append('tr')
+                .selectAll('th')
+                .data(names).enter()
+                .append('th')
+                    .text(function (column) { return column; })
+                     .filter(function(d) { return d != 'Клас' })
+                    .attr("class", "text-right");;
+
+            
+
+                // create a row for each object in the data
+                var rows = tbody.selectAll('tr')
+                .data(data)
+                .enter()
+                .append('tr');
+
+                // create a cell in each row for each column
+                var cells = rows.selectAll('td')
+                .data(function (row) {
+                    return columns.map(function (column) {
+                    return {column: column, value: row[column]};
+                    });
+                })
+                .enter()
+                .append('td')
+                    .text(function (d) { return d.value; }
+                    );
+                
+                cells
+                    .filter(function(d) { return d.column == 'number' })
+                    .style("width", '60%')
+
+                cells
+                    .filter(function(d) { return d.column == 'share' })
+                    .style('fill', function(d) {
+                        return colors(d.value);
+                    });
+
+                cells
+                    .filter(function(d) { return d.column != 'number' })
+                    .attr("class", "text-right");
+
+                    
+
+                thead
+                    .filter(function(d) { return d != 'Клас' })
+                    .attr("class", "text-right");
+
+                console.log(thead);
+
+            return table;
+            }
+
+            // render the table(s)
+            //tabulate(data, ['number', 'values'], ['Клас', 'Частка (%)']); 
+            tabulate(data, ['number', 'active', 'count', 'share'], ['Клас', 'Було', 'Закрилось', 'Частка (%)']); // 2 column table
+
 
     function tooltipShow(d, i) {
         var datum = d.regionData;
@@ -244,5 +283,5 @@ window.onload = function () {
 
     }
     init();
-}
+
 

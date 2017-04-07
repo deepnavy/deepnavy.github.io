@@ -34,9 +34,9 @@ function(err, rawData) {
     countTotal = rawData.map(function(id) {
         return id.total;
       });
-    count_close.forEach(function(item, i, arr) {
+    /*count_close.forEach(function(item, i, arr) {
       arr[i] = -item;
-    });
+    });*/
     count_new = rawData.map(function(id) {
         return id.count_new;
       });
@@ -117,7 +117,7 @@ function(err, rawData) {
     };
 
     var options = {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: date.slice(-15, date.length),
         datasets: [{
@@ -126,10 +126,10 @@ function(err, rawData) {
           data: count_new.slice(-15, count_new.length),
           borderColor: '#9BC53D',
           borderWidth: 3,
-          //pointRadius: 2,
+          pointRadius: 2,
           pointBackgroundColor: '#9BC53D',
           backgroundColor: '#9BC53D',
-          //pointHitRadius: 7,
+          pointHitRadius: 7,
         }, {
           fill: false,
           label: 'Закрито',
@@ -139,7 +139,7 @@ function(err, rawData) {
           pointRadius: 2,
           pointBackgroundColor: '#E55934',
           backgroundColor: '#E55934',
-          //pointHitRadius: 7,
+          pointHitRadius: 7,
         }]
       },
       options: {
@@ -163,33 +163,38 @@ function(err, rawData) {
         },
         scales: {
           xAxes: [{
-            barThickness: 10,
+            //barThickness: 10,
             gridLines: {
               display: false
             },
-            /*type: 'time',
+            type: 'time',
             time: {
               displayFormats: {
-                        'millisecond': 'DD.MM',
-                        'second': 'DD.MM',
-                        'minute': 'DD.MM',
-                        'hour': 'DD.MM',
-                        'day': 'DD.MM',
-                        'week': 'DD.MM',
-                        'month': 'DD.MM',
-                        'quarter': 'DD.MM',
-                        'year': 'DD.MM',
+                        'millisecond': 'MMM',
+                        'second': 'MMM',
+                        'minute': 'MMM',
+                        'hour': 'MMM',
+                        'day': 'MMM',
+                        'week': 'MMM',
+                        'month': 'MMM',
+                        'quarter': 'MMM',
+                        'year': 'MMM',
                     },
               tooltipFormat: 'DD MMMM YYYY'
 
-            }*/
+            },
 
             ticks: {
+                autoSkip: true,
+                maxTicksLimit: 10
+            }
+
+            /*ticks: {
                     // Create scientific notation labels
                     callback: function(value, index, values) {
-                        return moment(value).format('DD.MM');
+                        return moment(value).format('MMM');
                     }
-                }
+                }*/
           }],
           yAxes: [{
             stacked: true,

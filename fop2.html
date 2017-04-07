@@ -37,6 +37,15 @@
     <!-- dependencies for charts js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="/assets/fop/chartjs-plugin-annotation.min.js"></script>
+
+    <!-- d3js map dependencies -->
+    <script src="/assets/fop/colorbrewer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+    <script src="/assets/fop/tooltip.js"></script>
     
     <!-- jQuery library -->
 
@@ -136,6 +145,37 @@
             </div>
         </div>
     </div>
+
+    <div class="page-header">
+
+            <h4>Припинення ФОП за областями на 03.04.2017</h4>
+    </div>
+
+    <div id="map">
+
+    </div>
+
+    <div class="page-header">
+
+            <h4>Статистика припинення ФОП за галузями з 16.12.2016 по 03.04.2017
+    </h4>
+    </div>
+
+        <div id="classesTable">
+
+        </div>
+
+
+
+    <!-- sript for map d3 -->
+    <script type="x-jst" id="tooltip-template">
+        <h5><%= region %></h5>
+        <p><b>Активних: </b><font color="#9BC53D"><%= active %></font> </p>
+        <p><b>Закрито: </b><font color="#E55934"><%= count %></font> </p>
+        <p><b>Частка: </b><%= share %> </p>
+    </script>
+
+    <script src="/assets/fop/data-script-map.js"></script>
 
     <!-- sript for building charts with chartist -->
     <script src="/assets/fop/data-script2.js"></script>
