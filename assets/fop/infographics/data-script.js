@@ -301,7 +301,7 @@ function loadData() {
     queue()
     .defer(d3.json, "https://opendatabot.com/api/statistics/CloseFop")  
     .defer(d3.json, "https://opendatabot.com/api/statistics/CloseFopClasses")  
-    .defer(d3.json, "/assets/fop/ukraine.json")  
+    .defer(d3.json, "/assets/fop/infographics/ukraine.json")  
     .await(processData);  
 }
 
