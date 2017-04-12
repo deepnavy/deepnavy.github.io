@@ -1,7 +1,9 @@
 moment.locale('uk');
 
 // number of weeks to cut from the end of dataset
-var weeksToFollow = 15;
+var weeksToFollow = 15; //default
+// starting date on charts
+var startDate = '2016-12-16';
 
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
@@ -30,6 +32,16 @@ function(err, rawData) {
     date = rawData.map(function(id) {
         return id.date;
     });
+
+    // calculating start position in charts
+    var dateIndex;
+    date.forEach(function(item, i, arr) {
+        if (item == startDate) {
+            dateIndex = i;
+        }
+    });
+    weeksToFollow = date.length - dateIndex;
+
     count_close = rawData.map(function(id) {
         return id.count_close;
     });
@@ -41,13 +53,15 @@ function(err, rawData) {
     count_new = rawData.map(function(id) {
         return id.count_new;
     });
+    
 
     var min = Math.min.apply(null, countTotal),
     max = Math.max.apply(null, count_close);
 
-    min = Math.floor(min*0.0001)*10000;
+    min = Math.floor(min*0.00001)*100000;
 
     console.log("min: " + min);
+
 
 
     var options = {
@@ -197,7 +211,7 @@ function(err, rawData) {
               borderDash: [3, 3]
             },
             ticks: {
-              min: 1700000 //min - 50000
+              min: min
             }
           }]
         },
@@ -592,7 +606,7 @@ function renderCanvas(){
         .html(style);
 
 
-    elemToRender = document.getElementById("infContainer");
+    elemToRender = document.getElementById("open-close-wrapper");
     html2canvas(elemToRender).then(function(canvas) {
         document.body.appendChild(canvas);
 
