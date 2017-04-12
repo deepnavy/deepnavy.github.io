@@ -604,7 +604,7 @@ function renderCanvas(){
 
 }
 
-d3.select('#infContainer .col-sm-8')
+d3.select('#infContainer')
     .append("button")
     .on("click",renderCanvas)
     .attr('class', 'btn btn-success')
