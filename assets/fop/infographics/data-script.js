@@ -42,8 +42,12 @@ function(err, rawData) {
         return id.count_new;
     });
 
-    var min = Math.min.apply(null, count_close),
+    var min = Math.min.apply(null, countTotal),
     max = Math.max.apply(null, count_close);
+
+    min = Math.floor(min*0.0001)*10000;
+
+    console.log("min: " + min);
 
 
     var options = {
@@ -193,7 +197,7 @@ function(err, rawData) {
               borderDash: [3, 3]
             },
             ticks: {
-              min: 1700000
+              min: 1700000 //min - 50000
             }
           }]
         },
@@ -558,4 +562,50 @@ function processData(error, statsMap, statsClasses, mapData) {
 init();
 
 
+function renderCanvas(){
 
+    var style = "\n";
+    var requiredSheets = ['infographics.css', 'bootstrap.min.css']; // list of required CSS
+    for (var i=0; i<document.styleSheets.length; i++) {
+        var sheet = document.styleSheets[i];
+        if (sheet.href) {
+            var sheetName = sheet.href.split('/').pop();
+            if (requiredSheets.indexOf(sheetName) != -1) {
+                var rules = sheet.rules;
+                if (rules) {
+                    for (var j=0; j<rules.length; j++) {
+                        style += (rules[j].cssText + '\n');
+                    }
+                }
+            }
+        }
+    }
+
+    console.log(style);
+
+    var defs = document.createElement('div');
+    defs.setAttribute("id", "defs");
+    document.body.insertBefore(defs, document.body.firstChild);
+    d3.select("#defs")
+        .append('style')
+        .attr('type','text/css')
+        .html(style);
+
+
+    elemToRender = document.getElementById("infContainer");
+    html2canvas(elemToRender).then(function(canvas) {
+        document.body.appendChild(canvas);
+
+        var dataURL = canvas.toDataURL();
+
+        console.log(dataURL);
+    });
+
+
+}
+
+d3.select('#infContainer .col-sm-8')
+    .append("button")
+    .on("click",renderCanvas)
+    .attr('class', 'btn btn-success')
+    .text("Make Canvas");

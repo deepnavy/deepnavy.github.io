@@ -46,6 +46,11 @@
     <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
     <script src="/assets/fop/infographics/tooltip.js"></script>
     <script src="/assets/fop/infographics/moment-with-locales.min.js"></script>
+
+
+    <script src="/assets/fop/infographics/html2canvas.js"></script>
+    <script src="/assets/fop/infographics/html2canvas.svg.js"></script>
+
     
     <!-- jQuery library -->
 
@@ -111,7 +116,7 @@
 
     <div class="container">
         <div>
-<div class="row"><div class="col-sm-2"></div><div class="col-sm-8">
+<div class="row" id="infContainer"><div class="col-sm-2"></div><div class="col-sm-8">
     <h2>Відслідковуйте закриття ФОПів в&nbsp;реальному часі (оновлення 27.03)</h2> 
 
     <div class="bs-callout bs-callout-info">
@@ -136,7 +141,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <div class="page-header">
+            <div class="page-header" id="open-close-wrapper">
 
             <h4>Закриття та відкриття ФОП, щотижнево</h4>
             </div>
