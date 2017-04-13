@@ -42,6 +42,7 @@ function(err, rawData) {
     });
     weeksToFollow = date.length - dateIndex;
 
+    //var weeksToFollow = 30;
     count_close = rawData.map(function(id) {
         return id.count_close;
     });
@@ -58,9 +59,15 @@ function(err, rawData) {
     var min = Math.min.apply(null, countTotal),
     max = Math.max.apply(null, count_close);
 
-    min = Math.floor(min*0.00001)*100000;
+    minFloored = Math.floor(min*0.00001)*100000;
+
+    console.log("difference:" + (min - minFloored));
 
     console.log("min: " + min);
+
+    if (min - minFloored > 50000) {
+        minFloored = minFloored + 50000
+    }
 
 
 
@@ -114,6 +121,7 @@ function(err, rawData) {
         },
         scales: {
           xAxes: [{
+
             gridLines: {
               display: false
             },
@@ -129,9 +137,11 @@ function(err, rawData) {
                 },
 
             },
-            afterFit: function(humdaysChart) {    
-                  humdaysChart.ticks.pop();
-                  humdaysChart.ticks.pop();
+            afterFit: function(humdaysChart) {  
+                //console.log(humdaysChart);
+                  //humdaysChart.ticks.pop();
+                  //humdaysChart.ticks.pop();
+                  //humdaysChart.ticks.pop();
             }
           }],
           yAxes: [{
@@ -190,19 +200,20 @@ function(err, rawData) {
             },
 
             ticks: {
-              maxRotation: 0,
+                maxRotation: 0,
                 stepSize:400,
                 autoSkip: true,
+                autoSkipPadding: 10,
                 maxTicksLimit: 5,
 
                 callback: function(value, index, values) {
                         return moment(value).format("MMMM");
                 },
-
+                padding: 5,
             },
             afterFit: function(humdaysChart) {    
-                  humdaysChart.ticks.pop();
-                  humdaysChart.ticks.pop();
+                  //humdaysChart.ticks.pop();
+
 
                 }
           }],
@@ -211,7 +222,7 @@ function(err, rawData) {
               borderDash: [3, 3]
             },
             ticks: {
-              min: min
+              min: minFloored
             }
           }]
         },
@@ -576,6 +587,7 @@ function processData(error, statsMap, statsClasses, mapData) {
 init();
 
 
+// get data image
 function renderCanvas(){
 
     var style = "\n";
