@@ -303,7 +303,7 @@ regionsAlignment = {
         "uz": "Закарпатська",
         "volyn": "Волинська",
         "ck": "Черкаська",
-        "kr": "Херсонська",
+        "kr": "Кіровоградська",
         "kiev": "Київська",
         "od": "Одеська",
         "vn": "Вінницька",
@@ -588,7 +588,9 @@ init();
 
 
 // get data image
+
 function renderCanvas(){
+
 
     var style = "\n";
     var requiredSheets = ['infographics.css', 'bootstrap.min.css']; // list of required CSS
@@ -605,7 +607,7 @@ function renderCanvas(){
                 }
             }
         }
-    }
+    }  
 
     console.log(style);
 
@@ -629,6 +631,21 @@ function renderCanvas(){
 
 
 }
+
+function expandContainer(){
+    var infContainer = document.getElementById("infContainer");
+
+    var widthPercent = 80;
+
+    infContainer.style.width = widthPercent + "%";
+}
+
+
+d3.select('#infContainer')
+    .append("button")
+    .on("click", expandContainer)
+    .attr('class', 'btn btn-success')
+    .text("Expand");
 
 d3.select('#infContainer')
     .append("button")
