@@ -42,7 +42,7 @@ function(err, rawData) {
     });
     weeksToFollow = date.length - dateIndex;
 
-    //var weeksToFollow = 30;
+    //var weeksToFollow = 18;
     count_close = rawData.map(function(id) {
         return id.count_close;
     });
@@ -635,9 +635,16 @@ function renderCanvas(){
 function expandContainer(){
     var infContainer = document.getElementById("infContainer");
 
-    var widthPercent = 80;
+    var chartWrapper = document.querySelector("#open-close-wrapper .chart-wrapper");
+
+    var widthPercent = 100;
 
     infContainer.style.width = widthPercent + "%";
+    chartWrapper.style.height = "80vh";
+}
+
+function downloadPic(){
+    
 }
 
 
@@ -652,3 +659,9 @@ d3.select('#infContainer')
     .on("click",renderCanvas)
     .attr('class', 'btn btn-success')
     .text("Make Canvas");
+
+d3.select('#infContainer')
+    .append("button")
+    .on("click", downloadPic)
+    .attr('class', 'btn btn-success')
+    .text("Download");
