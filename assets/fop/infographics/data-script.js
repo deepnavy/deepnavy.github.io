@@ -637,10 +637,10 @@ function expandContainer(){
 
     var chartWrapper = document.querySelector("#open-close-wrapper .chart-wrapper");
 
-    var widthPercent = 100;
+    //var widthPercent = 100;
 
-    infContainer.style.width = widthPercent + "%";
-    chartWrapper.style.height = "80vh";
+    infContainer.style.width = "1200px";
+    chartWrapper.style.height = "600px";
 }
 
 
