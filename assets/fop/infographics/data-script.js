@@ -643,9 +643,6 @@ function expandContainer(){
     chartWrapper.style.height = "80vh";
 }
 
-function downloadPic(){
-    
-}
 
 
 d3.select('#infContainer')
@@ -659,9 +656,3 @@ d3.select('#infContainer')
     .on("click",renderCanvas)
     .attr('class', 'btn btn-success')
     .text("Make Canvas");
-
-d3.select('#infContainer')
-    .append("button")
-    .on("click", downloadPic)
-    .attr('class', 'btn btn-success')
-    .text("Download");
