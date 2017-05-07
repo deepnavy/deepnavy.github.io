@@ -507,18 +507,7 @@ function buildCharts(data){
           backgroundColor: '#E55934',
           pointHitRadius: 7,
         },
-        {
-          fill: false,
-          type: 'line',
-          label: 'Борги місцевим бюджетам',
-          data: dynamics,
-          borderColor: '#E55934',
-          borderWidth: 3,
-          pointRadius: 2,
-          pointBackgroundColor: '#E55934',
-          backgroundColor: '#E55934',
-          pointHitRadius: 7,
-        }]
+        ]
       },
       options: {
         tooltips: {
