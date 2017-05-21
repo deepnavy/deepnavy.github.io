@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Используем Python для доступа к данным Всемирного банка
+title:      Используем Python для доступа к Data API Всемирного банка
 date:       2017-05-17
 minutes:    8
 image: /assets/plot.png
@@ -183,9 +183,9 @@ r = requests.get('http://api.worldbank.org/countries/ukr/indicators/IC.REG.DURS'
 json_data = r.json()
 {% endhighlight %}
 
-Дополнительную информацию о библиотеке wbdata, можно найти в [документации](https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information){:target"_blank" class="external"}.
+Дополнительную информацию о библиотеке wbdata, можно найти в [документации](http://wbdata.readthedocs.io/en/latest/index.html){:target"_blank" class="external"}.
 
-Обзор Data API Всемирного банка доступен на сайте.
+Обзор Data API Всемирного банка доступен на [сайте](https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information){:target"_blank" class="external"}.
 
 
 
