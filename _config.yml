@@ -54,8 +54,8 @@ flattr_button:
 # Post sharing icons
 show_sharing_icons: false
 # Change to 'true' to enable individual icons
-share_facebook: true
-share_twitter: true
+share_facebook: false
+share_twitter: false
 share_googleplus: false
 share_linkedin: false
 share_digg: false
@@ -112,3 +112,4 @@ gems:
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
 excerpt_separator: <!--more-->
+highlighter: pygments
