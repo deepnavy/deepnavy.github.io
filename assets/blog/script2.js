@@ -1,0 +1,33 @@
+data = [
+    {title:"Як перевірити колишнього директора?", imgscr: "736.png", description:"За останній рік в Україні змінилося 127 079 директорів. Це 8% від загальної кількості."},
+    {title:"Чому судові рішення публікують із затримкою?", imgscr: "735.png", description:"За останній рік в Україні змінилося 127 079 директорів. Це 8% від загальної кількості."},
+    {title:"Чи можна використовувати зброю для самооборони?", imgscr: "733.png", description:"Голову Київобленерго вбили у власному будинку. Якби у нього була вогнепальна зброя — він зміг би захистити себе та свою родину від злочинців"},
+    {title:"Маркер незрілості: В 53% засновник є директором компанії", imgscr: "732.png", description:"Українські підприємці не готові делегувати управлінські функції"},
+    {title:"Суддя передумав. Як винести два вироки по одній справі", imgscr: "731.png", description:"Вирок не може бути змінений. Для його оскарження потрібен апеляційний суд. Але є випадки, в яких суди вирішують “виправити” суть вироку"},
+    {title:"Про що говорить статутний капітал?", imgscr: "728.png", description:"Статутний капітал не розповість про репутацію контрагента"}
+]
+
+
+var card = _.template($("#card-template").html()); 
+
+
+data.forEach(function(item, i, arr) {
+  $("#insert-cards").append(card(item));
+});
+
+
+var styles = ["style3.css", "style4.css", "style5.css"]
+var styleNum = 0;
+
+$( "#change-style" ).click(function() {
+
+        $('head').append('<link rel="stylesheet" type="text/css" href="/assets/blog/' + styles[styleNum] + '">');
+        styleNum++;
+
+
+});
+
+$( "#remove-style" ).click(function() {
+  $('link[rel=stylesheet][href~="/assets/blog/style3.css"]').remove();
+});
+

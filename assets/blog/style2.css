@@ -1,0 +1,106 @@
+.mb-4 {
+    margin-bottom: 1.5rem!important;
+}
+
+.h-100 {
+     height: 100%!important; 
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-body hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.card-title a {
+    color: #333;
+}
+
+.card p {
+    font-size: 12px;
+}
+
+
+/* style1 */
+
+.button-style1 {
+    background: transparent;
+    color: #357ebd;
+}
+
+/* style2 
+
+.card {
+    height: 460px!important;
+}
+
+.card hr {
+    display: none;
+}
+
+.card .button-style1 span {
+    display: none;
+}
+
+.card .button-style1 {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 15px;
+}
+
+.card:hover {
+    border-color: #357ebd;
+}
+
+/* style2 + 3 
+
+.card img{
+    display: none;
+}
+
+.card {
+    height: 180px!important;
+}
+
+/* style 3 end */
+
