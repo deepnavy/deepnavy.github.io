@@ -1,27 +1,11 @@
-/* style2 */
 
-.card {
-    height: 460px!important;
-}
-
-.card hr {
-    display: none;
-}
-
-.card .button-style1 span {
-    display: none;
-}
 
 .card .button-style1 {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    font-size: 15px;
+    display: none;
 }
 
-.card:hover {
-    border-color: #357ebd;
+.card-text {
+    margin-bottom: 10px;
 }
 
-/* style2 + 3 */
 

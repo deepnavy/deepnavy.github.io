@@ -1,8 +1,6 @@
 
 
-.card {
-    height: 460px!important;
-}
+
 
 .card hr {
     display: none;
@@ -23,9 +21,6 @@
     display: none;
 }
 
-.card {
-    height: 180px!important;
-}
 
 /* style 3 end */
 

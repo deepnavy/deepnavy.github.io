@@ -31,3 +31,13 @@ $( "#remove-style" ).click(function() {
   $('link[rel=stylesheet][href~="/assets/blog/style3.css"]').remove();
 });
 
+$('.card').responsiveEqualHeightGrid();
+
+$('.card').click(function() {
+  var href = $(this).find('a').attr('href');
+  window.location.href = href;
+});
+
+
+
+
