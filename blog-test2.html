@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="/assets/blog/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="/assets/blog/style.css">
     <link rel="stylesheet" href="/assets/blog/style2.css">
-    <link rel="stylesheet" href="/assets/blog/style3.css">
     <!--    <link rel="stylesheet" href="/styles/docs.min.css">-->
     <link rel="stylesheet" href="/assets/blog/company-search.css">
     <link rel="stylesheet" href="/assets/blog/jquery-ui.min.css">
@@ -149,28 +148,20 @@
             </ul>
             </div> -->
             <div class="col-md-12">
-                    <ul class="nav nav-tabs main-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/blog-test.html" role="tab" >
-                                Відкриті дані Україна
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/blog-test2.html" >
-                                Відкриті дані світ
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"  href="/blog-test3.html" >
-                                Новини Opendatabot
-                            </a>
-                        </li>
+                <div class="tabs-wrapper">
+                    <a href="#" class="nav-tabs-dropdown btn btn-block btn-primary button-style1">Tabs</a>
+                    <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-tabs-horizontal" role="tablist">
+                        <li><a href="/blog-test.html">Відкриті дані Україна</a></li>
+                        <li class="active"><a href="#" aria-controls="" role="tab" data-toggle="tab">Відкриті дані світ</a></li>
+                        <li><a href="#" aria-controls="" role="tab" data-toggle="tab">Новини Opendatabot</a></li>
+          
                     </ul>
-                    </div>
+                </div>
+            </div>
         </div>
         <div class="row" id="insert-cards">
         <script type="x-jst" id="card-template">
-        <div class="col-md-4 col-sm-6 mb-4">
+        <div class="col-md-3 col-sm-4 mb-4">
               <div class="card">
                 <a href="#"><img class="card-img-top" src="/assets/blog/<%= imgscr %>" alt=""></a>
                 <div class="card-body">
