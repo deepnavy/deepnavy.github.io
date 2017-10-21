@@ -154,6 +154,50 @@
   }
 
 
+/* related news */
+
+.related-news-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fafafa;
+    margin-bottom: 20px;
+}
+
+.related-news-header {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.test-var2 .card img {
+    display: none;
+} 
+
+  /* related news end*/
+
+#odb-news .card-body {
+    padding: 16px 16px;
+}
+
+.btn-xl {
+    padding: 15px 30px;
+}
+
+#odb-news .btn {
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #0070BF;
+    border-radius: 300px;
+    border-color: #0070BF;
+     
+}
+
+#odb-news .btn:hover {
+    background-color: transparent;
+    color: #0070BF;
+}
+
+
 
 
 

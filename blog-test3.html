@@ -118,7 +118,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="odb-news">
         <!-- <div class="col-md-8 col-md-offset-2"> -->
         <!-- <div class="row">
             <div class="col-md-12">
@@ -151,19 +151,19 @@
                 <div class="tabs-wrapper">
                     <a href="#" class="nav-tabs-dropdown btn btn-block btn-primary button-style1">Tabs</a>
                     <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-tabs-horizontal" role="tablist">
-                        <li  class="active"><a href="#home" aria-controls="" role="tab" data-toggle="tab">Відкриті дані Україна</a></li>
+                        <li><a href="/blog-test.html">Відкриті дані Україна</a></li>
                         <li><a href="/blog-test2.html">Відкриті дані світ</a></li>
-                        <li><a href="/blog-test3.html">Новини Opendatabot</a></li>
+                        <li class="active"><a href="#" aria-controls="" role="tab" data-toggle="tab">Новини Opendatabot</a></li>
           
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="row" id="insert-cards">
+        <div class="row">
         <script type="x-jst" id="card-template">
         <div class="col-md-4 col-sm-6 mb-4">
               <div class="card">
-                <a href="#"><img class="card-img-top" src="/assets/blog/<%= imgscr %>" alt=""></a>
+                <a href="#"><img class="card-img-top" src="/assets/blog/<%= imgscr %>" alt="" style="display:none"></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#" id="remove-style"><%= title %></a>
@@ -174,33 +174,66 @@
               </div>
             </div>
         </script>
+
+        <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                  <a href="#"><img class="card-img-top" src="/assets/blog/735.png" alt="" style="display:none"></a>
+                  <div class="card-body">
+                      <p>В Opendatabot з’явилася можливість пошуку по старим директорам та власникам компаній. 
+                    </p> <p>
+                            Пошук по директорам компанії важливий при прийомі людини на роботу, особливо на керуючі позиції. 
+                    </p>
+                    <p>
+                            Бажано перевірити, в яких компаніях до цього працювала людина і чи не не було у цих бізнесів проблем з репутацією.
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                      <a href="#"><img class="card-img-top" src="/assets/blog/735.png" alt="" style="display:none"></a>
+                      <div class="card-body">
+                          <p>Державне майно належить всім громадянам країни. Відповідно, кожен має знати, де і який стоїть ліхтар, прокладена труба чи встановлено смітник. 
+                            </p>
+                            <p>
+                            Навіть в Америці більша частина даних щодо міської інфраструктури в кращому випадку знаходиться в розрізнених базах, в гіршому - зберігається в паперовому вигляді. Без додаткових запитів, ви не зрозумієте, куди проведений газ, електроенергія, вода тощо. 
+                            </p>
+                            <p> 
+                            Buildingeye зміг вирішити цю проблему. Проект збирає всі документи по міській інфраструктурі докупи й візуалізує їх. 
+                            </p>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                          <a href="#"><img class="card-img-top" src="/assets/blog/735.png" alt="" style="display:none"></a>
+                          <div class="card-body"><p><b>Відкриті дані в освіті.</b> </p>
+                                
+                                <p>На сайті американського міністерства освіти є посилання на сервіс, який аналізує три набори даних: вартість освіти,процент тих, хто завершив навчання, а також середню зарплатню випускника. Дані по зарплатні отримуються від IRS.
+                                https://collegescorecard.ed.gov/ </p>
+                                <p>
+                                Відповідно, перед вступом ви можете переглянути ці відомості й зрозуміти, чи варто інвестувати в навчання в певному ВУЗі.
+                                </p>
+                                <p>
+                                Про те, як будували цей сервіс можна почитати за посиланням: https://obamawhitehouse.archives.gov/blog/2015/09/12/under-hood-building-new-college-scorecard-students
+                                </p>
+                          </div>
+                          
+                        </div>
+                      </div>
             
 
         </div>
-
         <div class="row text-center">
-            <nav aria-label="Page navigation">
-                <ul class="pagination">
-                    <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                    </li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                    </li>
-                </ul>
-                </nav>
-        <div>
+            <h4>Хочешь бути в курсі новин?</h4>
+            <a class="btn btn-primary btn-xl" href="">Підисуйся на наш канал </span></a>
+        </div>
         <!-- </div> -->
-        <script src="/assets/blog/script2.js"></script>
+        <script src="/assets/blog/script4.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
     </div>
 </div>
