@@ -164,8 +164,8 @@
 }
 
 .related-news-header {
-    /* padding-right: 15px;
-    padding-left: 15px; */
+    padding-right: 15px;
+    padding-left: 15px; 
     margin-bottom: 20px;
 }
 
@@ -183,6 +183,11 @@
 
 .test-var2 .card img {
     display: none;
+} 
+
+.test-var3 .related-news-header {
+    padding-right: 0;
+    padding-left: 0; 
 } 
 
   /* related news end*/
