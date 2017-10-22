@@ -164,9 +164,21 @@
 }
 
 .related-news-header {
-    padding-right: 15px;
-    padding-left: 15px;
+    /* padding-right: 15px;
+    padding-left: 15px; */
     margin-bottom: 20px;
+}
+
+.related-news-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.related-news-list .related-news-list-item {
+    font-size: 16px;
+    margin-bottom: 20px;
+
 }
 
 .test-var2 .card img {
@@ -177,6 +189,16 @@
 
 #odb-news .card-body {
     padding: 16px 16px;
+    word-wrap: break-word;
+}
+
+#odb-news .card-date {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+#odb-news .pager {
+    margin-top: 0px;
 }
 
 .btn-xl {
@@ -196,6 +218,8 @@
     background-color: transparent;
     color: #0070BF;
 }
+
+
 
 
 
