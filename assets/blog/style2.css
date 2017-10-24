@@ -1,3 +1,30 @@
+/* new simpler button style*/
+
+.btn-primary {
+    border: none;
+    background-color: #3297de;
+    /* border-bottom: 4px solid #186092; */
+}
+
+.btn-cta {
+    border-bottom: 2px solid #186092; 
+}
+
+.btn-primary:hover {
+    background-color:#2188d0;
+}
+
+.btn-ghost {
+    border-color: #3297de;
+    color: #3297de;
+}
+
+.btn-ghost:hover {
+    background-color:#2188d0;
+    color: #fff;
+    border-color: transparent !important;
+}
+
 /* cards */
 
 .mb-4 {
@@ -169,7 +196,7 @@
     margin-bottom: 20px;
 }
 
-.related-news-list {
+/* .related-news-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -188,7 +215,7 @@
 .test-var3 .related-news-header {
     padding-right: 0;
     padding-left: 0; 
-} 
+}  */
 
   /* related news end*/
 
@@ -210,7 +237,7 @@
     padding: 15px 30px;
 }
 
-.news-cta .btn {
+/* .news-cta .btn {
     font-weight: 700;
     text-transform: uppercase;
     background-color: #0070BF;
@@ -222,6 +249,27 @@
 .news-cta .btn:hover {
     background-color: transparent;
     color: #0070BF;
+} */
+
+
+/* add to calendar page*/
+.icon-calendar {
+    background-image: url("/assets/calendar_files/icon-calendar-t1.png");
+    background-position: center center;
+    height: 15px;
+    line-height: 5px;
+    width: 20px;
+    margin: 0px;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+    fill: #fff;
+}
+
+.thumbnail a>img, .thumbnail>img {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
 }
 
 

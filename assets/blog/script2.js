@@ -19,7 +19,7 @@ data.forEach(function(item, i, arr) {
 });
 
 // make equal height of cards
-$('.card').responsiveEqualHeightGrid();
+$('.equal-height').responsiveEqualHeightGrid();
 // make card clickable
 $('.card').click(function() {
   var href = $(this).find('a').attr('href');
