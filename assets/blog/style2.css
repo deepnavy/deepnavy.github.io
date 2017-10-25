@@ -99,12 +99,13 @@
     display: none;
     background: transparent;
     color: #0070BF;
-    border-color: #0070BF;
+    border-color: #0070BF!important;
   }
 
   .nav-tabs-dropdown:hover, .nav-tabs-dropdown:focus{
     border-color: transparent;
     background-color: #0070BF;
+    color: #fff;
   }
   
   .nav-tabs-dropdown:before {
@@ -367,6 +368,12 @@
     position: relative;
 }
 
+/* instruction tabs */
+@media screen and (min-width: 768px) {
+    .instruction-tabs {
+        display: none;
+    }
+}
 
 
 
