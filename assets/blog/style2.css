@@ -117,7 +117,7 @@
 
 @media screen and (min-width: 769px) {
     #nav-tabs-wrapper {
-      display: block!important;
+      display: block;
     }
   }
   @media screen and (max-width: 768px) {
@@ -181,6 +181,87 @@
       }
   }
 
+/* instruction-tabs */
+
+.instruction-tabs {
+    padding: 0px;
+}
+
+.instruction-tabs .tabs-wrapper {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.instruction-tabs .nav-tabs {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+}
+.instruction-tabs .nav-tabs-dropdown {
+    display: block;
+}
+.instruction-tabs #nav-tabs-wrapper {
+    display: none;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+    width: 100%
+}
+@media screen and (max-width: 768px) {
+    .instruction-tabs #nav-tabs-wrapper {   
+        position: relative;
+
+    }
+
+    .instruction-tabs {
+        padding: 10px;
+    }
+}
+.instruction-tabs .nav-tabs {
+    min-height: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    border: 1px solid #e2e2e2
+}
+.instruction-tabs .nav-tabs  > li {
+    float: none;
+}
+.instruction-tabs .nav-tabs  > li + li {
+    margin-left: 2px;
+}
+.instruction-tabs .nav-tabs > li,
+.instruction-tabs .nav-tabs > li > a {
+    background: transparent;
+    border: none;
+    width: 100%;
+} 
+.instruction-tabs .nav-tabs  > li > a {
+    border-radius: 4px;
+}
+
+.instruction-tabs .nav-tabs  > li > a:last-child {
+  margin-bottom: 5px;
+}
+
+.instruction-tabs .nav-tabs  > li > a,
+.instruction-tabs .nav-tabs  > li > a:hover,
+.instruction-tabs .nav-tabs  > li > a:focus {
+    border: none;
+}
+
+
+.instruction-tabs .nav-tabs  > li > a:hover,
+.instruction-tabs .nav-tabs  > li > a:focus,
+.instruction-tabs .nav-tabs  > li.active > a,
+.instruction-tabs .nav-tabs  > li.active > a:hover,
+.instruction-tabs .nav-tabs  > li.active > a:focus {
+    color: #111;
+    border: none;
+}
+
+.instruction-tabs .nav-tabs-dropdown:before {
+    right: 10%;
+  }
 
 /* related news */
 
@@ -290,6 +371,38 @@
     font-size: 12px;
 }
 
+.ios .button > button {
+
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    border: 1px solid #2196f3;
+    border-radius: 4px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.ios .button > button:hover {
+    
+        border-color: #49aeff;
+    }
+
+.android .button > button {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+.android .button {
+    margin-bottom: 10px;
+}
+
+/* .android .open-data-bot-wrapper {
+    height: auto;
+} */
+
 /* instructions */
 
 .instructions-wrapper {
@@ -320,7 +433,13 @@
     margin-bottom: 15px;
 }
 
-.instructions-wrapper ul {
+@media screen and (min-width: 769px) {
+    .instructions-text {
+        padding-left: 0px;
+    }
+}
+
+.instructions-text ul {
     list-style-type: none;
     padding-left: 15px;
 }
@@ -328,6 +447,7 @@
 .instructions-wrapper ul li {
     margin-bottom: 15px;
 }
+
 
 .instructions-wrapper .instructions p {
     display: inline;
@@ -347,8 +467,6 @@
     margin-bottom: 15px;
 }
 
-
-
 .screen-gif {
     z-index: 0;
     position: absolute;
@@ -363,17 +481,26 @@
     padding: 0px;
 }
 
+.instruction-tabs .text-center {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
 .iphone-mockup {
     z-index: 1;
     position: relative;
 }
 
+.instruction-tabs ul li {
+    margin-bottom: 0px;
+}
+
 /* instruction tabs */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     .instruction-tabs {
         display: none;
     }
-}
+} */
 
 
 

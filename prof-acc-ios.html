@@ -1,10 +1,8 @@
 
-<!-- saved from url=(0100)https://opendatabot.com/payment/start/professional/81794/4236a8ee59129aab78352fa2af9ce24d/37284095-2 -->
-<html lang="en" class="gr__opendatabot_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0099)http://work-dev.908.vc/payment/start/professional/81794/4236a8ee59129aab78352fa2af9ce24d/37284095-2 -->
+<html lang="en" class="gr__work-dev_908_vc"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Підписатись на професійний аккаунт Opendatabot</title>
-
     <meta name="robots" content="noindex">
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/prof-acc_files/bootstrap.min.css">
@@ -56,8 +54,26 @@
                 <div class="inner-wrapper">
                     <div class="logo-payment">
                     </div>
-                    
-           
+                    <form action="https://secure.wayforpay.com/pay" method="POST">
+            <input type="hidden" name="merchantAccount" value="opendatabot_com">
+            <input type="hidden" name="merchantAuthType" value="SimpleSignature">
+            <input type="hidden" name="merchantDomainName" value="opendatabot.com">
+            <input type="hidden" name="orderReference" value="81794-1-1509039525-37284095-2">
+            <input type="hidden" name="orderDate" value="1509039525">
+            <input type="hidden" name="amount" value="270">
+            <input type="hidden" name="productName[]" value="Професійний">
+            <input type="hidden" name="productPrice[]" value="270">
+            <input type="hidden" name="productCount[]" value="1">
+            <input type="hidden" name="merchantSignature" value="8ff2479e057ab9f055a4b33c779b6be5">
+            <input type="hidden" name="merchantTransactionSecureType" value="AUTO">
+            <input type="hidden" name="merchantTransactionType" value="SALE">
+            <input type="hidden" name="currency" value="UAH">
+            <input type="hidden" name="language" value="RU">
+            <input type="hidden" name="orderTimeout" value="49000">
+            <input type="hidden" name="defaultPaymentSystem" value="card">
+            <input type="hidden" name="paymentSystems" value="card">
+            <input type="hidden" name="returnUrl" value="https://opendatabot.com/payment/end/81794/4236a8ee59129aab78352fa2af9ce24d">
+            <input type="hidden" name="serviceUrl" value="https://opendatabot.com/payment/response">
         <div class="title">Професійний доступ</div>
     <div class="description">
         Щоденний контроль власників та&nbsp;моніторинг реєстрів
@@ -73,21 +89,29 @@
         270 грн на&nbsp;місяць
     </div>
     <div class="button-wrapper">
-
-            <button style="width: 100%" class="btn btn-primary btn-cta" >
-                Сплатити карткою
+        <div class="button">
+            <button class="btn btn-primary" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/payment/startpayment&#39;); fbq(&#39;track&#39;, &#39;Payment&#39;, {&#39;type&#39;: &#39;FormClick&#39;});">
+                сплатити карткою
             </button>
-
-            <a style="width: 100%" class="btn btn-default btn-ghost" href="/prof-acc2.html">
-                Сплатити безготівковим розрахунком
-            </a>
+        </div>
+            <div class="button">
+                <button class="btn btn-primary" onclick="window.location.href = &#39;/prof-acc-android.html">
+                    сплатити безготівковим розрахунком
+                </button>
+            </div>
         
     </div>
-                                           
-                            
+</form>                                            <div class="button-wrapper">
+                        
+                        </div>
+                        <form action="/prof-acc-android.html" method="POST">
+                            <input type="hidden" name="orderReference" value="81794-1-1509039525-37284095-2">
+                            <input type="hidden" name="transactionStatus" value="Approved">
+                        
+                        </form>
                                                         </div>
                 <div class="conditions">
-                     <p>Професійний доступ діятиме <nobr>до 24 грудня 2017</nobr></p>                     <a href="https://opendatabot.com/page/oferta">Умови користування</a>
+                     <p>Професійний доступ діятиме <nobr>до 24 січня 2018</nobr></p>                     <a href="http://work-dev.908.vc/page/oferta">Умови користування</a>
                 </div>
             </div>
                     </div>
