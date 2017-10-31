@@ -1,0 +1,23 @@
+.page-content h1.title {
+        padding-left: 0px; 
+}
+
+.page-content .tab-content {
+    padding-top: 0px;
+}
+
+.providers .sidebar__accordion .panel-heading > a {
+    color: #333;
+}
+
+.providers a span:hover {
+    border-bottom: none;
+}
+
+.sidebar__accordion .panel-default .panel-heading {
+    padding-left: 5px;
+}
+
+.sidebar__accordion .panel-default .panel-body {
+    padding-left: 5px;
+}
