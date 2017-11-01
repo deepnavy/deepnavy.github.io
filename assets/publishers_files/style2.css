@@ -21,3 +21,116 @@
 .sidebar__accordion .panel-default .panel-body {
     padding-left: 5px;
 }
+
+/* publishers search */
+.providers-search {
+    float: right;
+    position: relative;
+    top: -5px; 
+    padding: 0px;
+}
+
+
+.providers-search .input-group-addon{
+    background: white !important; 
+}
+.providers-search .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.providers-search button{
+    border-left:0; 
+    background-color:#ffe358;
+    border-color:#ffe358;
+}
+
+.providers-search .glyphicon{
+    top: 4px; 
+    line-height: 0.5;
+}
+@media screen and (max-width: 768px) {
+    .providers-search {
+        float: left;
+        margin-bottom: 15px;
+    }
+}
+
+.providers .sidebar__accordion .panel-default .panel-body > .entry-container {
+    margin-bottom: 13px;
+    display: block;
+    font-family: "ProbaProRegular", "SourceSansPro";
+    line-height: 24px;
+}
+
+.providers .sidebar__accordion .panel-default .panel-body .entry-container .datasets-number {
+    float: right;
+}
+
+.providers .sidebar__accordion .panel-heading {
+    margin-bottom: 13px;
+}
+
+.providers .table {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.table thead tr th {
+    font-size: 100%;
+}
+
+.providers .table thead tr {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.providers .table tbody tr {
+    margin-bottom: 20px;
+}
+
+.providers .table>thead>tr>th {
+    border-bottom: none; 
+}
+
+.providers .table>tbody>tr>td {
+    border-top: none;
+}
+
+.providers .table tbody tr:nth-child(even) {
+    background-color: transparent;
+}
+
+.providers .table>thead:first-child>tr:last-child>th:last-child {
+    /* width: 20%; */
+    text-align: right;
+}
+
+.providers .table>tbody>tr>td:last-child {
+    text-align: right;
+}
+
+.providers .table-responsive {
+    padding: 0px;
+    border: none;
+}
+
+.providers .table thead tr th {
+    color: #8f8f8f;
+    background-color: #fafafa;
+    font-family: "ProbaProRegular", "SourceSansPro";
+}
+
+.providers .table>tbody>tr>td, .providers  .table>tbody>tr>th, .providers  .table>thead>tr>td, .providers  .table>thead>tr>th {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.services {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+
