@@ -278,29 +278,6 @@
     margin-bottom: 20px;
 }
 
-/* .related-news-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.related-news-list .related-news-list-item {
-    font-size: 16px;
-    margin-bottom: 20px;
-
-}
-
-.test-var2 .card img {
-    display: none;
-} 
-
-.test-var3 .related-news-header {
-    padding-right: 0;
-    padding-left: 0; 
-}  */
-
-  /* related news end*/
-
 #odb-news .card-body {
     padding: 16px 16px;
     word-wrap: break-word;
@@ -343,19 +320,134 @@
 
 /* kimano professional accpunt dialog */
 
-.kimano-phone .btn {
+/* .kimano-phone .btn {
     margin-bottom: 10px;
-    width: 100%
-}
+   
+} */
 
 .price {
     margin-bottom: 26px;
+}
+
+/* custom radio buddons*/
+
+.funkyradio div {
+  clear: both;
+  overflow: hidden;
+}
+
+.funkyradio label {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  font-weight: normal;
+}
+
+.funkyradio input[type="radio"]:empty,
+.funkyradio input[type="checkbox"]:empty {
+  display: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label,
+.funkyradio input[type="checkbox"]:empty ~ label {
+  position: relative;
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label:before,
+.funkyradio input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+.funkyradio input[type="radio"]:checked ~ label,
+.funkyradio input[type="checkbox"]:checked ~ label {
+  color: #777;
+}
+
+.funkyradio input[type="radio"]:checked ~ label:before,
+.funkyradio input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio input[type="radio"]:focus ~ label:before,
+.funkyradio input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.funkyradio-success input[type="radio"]:checked ~ label:before,
+.funkyradio-success input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5cb85c;
 }
 
 .payment-divider {
     color: #9e9e9e;
     line-height: 16px;
     font-size: 12px;
+}
+
+.description {
+    font-size: 14px;
+}
+
+.payment-info {
+    text-align: center;
+    margin-top: 26px;
+    padding-bottom: 0;
+}
+
+.android .payment-info {
+    padding-bottom: 10px;
+}
+
+.payment-info > p {
+    text-decoration: none;
+    color: #9e9e9e;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.payment-features {
+    color: #111;
+    background-color: #f5f6f7;
+    border-color: #f0f0f0;
+}
+
+.ios .title, .android .title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.42857143;
 }
 
 .ios .button > button {
@@ -370,6 +462,35 @@
     text-transform: none;
 }
 
+.ios .btn-group .btn {
+    background-color: transparent;
+    border-color: #0080FF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #0080FF;
+    color: #0080FF;
+    outline: none!important;
+}
+
+.android .btn-group .btn {
+    outline: none!important;
+}
+
+.ios .btn-group .active {
+    background-color: #0080FF;
+    border-color: #0080FF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+}
+
+.ios .btn-group .active {
+    background-color: #0080FF;
+    border-color: #0080FF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 .pay-icon {
     width: 36px;
     height: auto;
@@ -377,11 +498,14 @@
 }
 
 
+.android .button-wrapper {
+    text-align: center;
+}
 .android .button > button {
     font-size: 13px;
     margin-bottom: 0px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 13px;
+    padding-left: 13px;
 
 }
 
@@ -389,11 +513,15 @@
     margin-bottom: 10px;
 }
 
-/* .android .open-data-bot-wrapper {
-    height: auto;
-} */
+.android .android-btn-ghost {
+    background-color: #ececec !important;
+    color: #252525;
+}
 
-/* instructions */
+.two-button-wrapper {
+    display: flex;
+}
+
 
 .instructions-wrapper {
     padding-top: 15px;
@@ -484,13 +612,6 @@
 .instruction-tabs ul li {
     margin-bottom: 0px;
 }
-
-/* instruction tabs */
-/* @media screen and (min-width: 768px) {
-    .instruction-tabs {
-        display: none;
-    }
-} */
 
 
 
