@@ -11,12 +11,12 @@ data = [
 ]
 
 
-// var card = _.template($("#card-template").html()); 
+var card = _.template($("#card-template").html()); 
 
 
-// data.forEach(function(item, i, arr) {
-//   $("#insert-cards").append(card(item));
-// });
+data.forEach(function(item, i, arr) {
+  $("#insert-cards").append(card(item));
+});
 
 // make equal height of cards
 $('.equal-height').responsiveEqualHeightGrid();
