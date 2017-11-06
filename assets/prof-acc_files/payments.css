@@ -128,18 +128,44 @@
     display: inline-block;
     background: #2196F3;
     border: none;
-    font-weight: 400;
+    font-weight: 200;
 }
 
-.ios .button > button:hover, .ios .button > button:active, .ios .button > button:focus {
+.payment-primary {
+    font-weight: 400 !important;
+}
+
+@media (max-width: 768px) {
+    .ios .button > button {
+        text-transform: capitalize;
+        padding: 7px 20px;
+        color: #2196F3;
+        cursor: pointer;
+        margin-top: 0px;
+        margin-bottom: 16px;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        background: transparent;
+        border: none;
+        font-weight: 400;
+    }
+
+    .two-button-wrapper .button:last-child {
+        padding-left: 0px;
+    }
+}
+
+/* .ios .button > button:hover, .ios .button > button:active, .ios .button > button:focus {
     color: #fff !important;
     background: #1D86CC !important;
 
-}
+} */
 
 .payment-detals {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #9e9e9e;
     line-height: 16px;
     font-size: 12px;
