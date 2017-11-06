@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="/assets/prof-acc_files/style.css">
     <link rel="stylesheet" href="/assets/prof-acc_files/payments.css">
 
+    <script src="/assets/news-page_files/jquery.min.js"></script>
+    <script src="/assets/news-page_files/bootstrap.min.js"></script>
+
     <script src="/assets/prof-acc_files/1503785606589629" async=""></script><script async="" src="/assets/prof-acc_files/fbevents.js"></script><script async="" src="/assets/prof-acc_files/analytics.js"></script><script src="/assets/prof-acc_files/retina.min.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -51,8 +54,8 @@
 <div class="open-data-bot-wrapper">
     <div class="container">
         
-            <div class="col-xs-12  kimano-phone no-gutter">
-                <div class="payment-main-content-wrapper">
+                        <div class="col-xs-12  kimano-phone no-gutter">
+                                <div class="payment-main-content-wrapper">
                 <div class="inner-wrapper">
                     <div class="payment-header text-center">
                     <img class="logo-payment" src="/assets/prof-acc_files/kimono.png">
@@ -82,15 +85,21 @@
                     </div>
     <div class="payment-body">
         <div class="description">
-            Щоденний контроль власників та&nbsp;моніторинг реєстрів
+                Оплата професійного доступу
         </div>
-        <div class="alert payment-features">
-                <ul>
-                <li><span>100 запитів до&nbsp;ЄДР на&nbsp;добу</span></li>
-                <li><span>10&nbsp;компаній в&nbsp;щоденному моніторингу</span></li>
-                <li><span>10&nbsp;підписок до&nbsp;судового реєстру</span></li>
-                </ul>
+        <div class="payment-choise">
+            <p>Оберіть спосіб оплати</p>
+            
+            <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Картка
+                    </label>
+                    <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Безготівковий розрахунок
+                    </label>
             </div>
+        </div>
+
         <div class="price">
             <span>270</span> грн/місяць
         </div>
@@ -113,7 +122,7 @@
                             
                         </form>
                                                         </div>
-                                                    </div>
+                                                        </div>
                 <div class="conditions">
                                         <a href="https://opendatabot.com/page/oferta">Умови користування</a>
                 </div>

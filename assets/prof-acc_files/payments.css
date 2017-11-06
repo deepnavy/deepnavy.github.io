@@ -1,6 +1,6 @@
 .ios .inner-wrapper, .iandroid .inner-wrapper {
     padding: 0px;
-    background: #ffffff;
+    background: transparent;
 }
 
 .ios .container, .iandroid .container {
@@ -114,6 +114,7 @@
     padding: 7px 20px;
     color: #fff;
     cursor: pointer;
+    margin-top: 0px;
     margin-bottom: 16px;
     font-size: 16px;
     width: 100%;
@@ -132,8 +133,118 @@
 
 .payment-detals {
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     color: #9e9e9e;
     line-height: 16px;
     font-size: 12px;
+}
+
+/* second screen radio buttons */
+
+.ios .btn-group .btn {
+    background-color: transparent;
+    border-color: #0080FF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #0080FF;
+    color: #0080FF;
+    outline: none!important;
+}
+
+.android .btn-group .btn {
+    outline: none!important;
+}
+
+.ios .btn-group .active {
+    background-color: #0080FF;
+    border-color: #0080FF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+}
+
+.ios .btn-group .active {
+    background-color: #0080FF;
+    border-color: #0080FF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.payment-choise {
+    margin-top: 30px;
+    margin-bottom: 40px; 
+    text-align: center;
+}
+
+.payment-choise .form-group {
+    text-align: left;
+}
+
+.two-button-wrapper {
+    display: flex;
+}
+
+.two-button-wrapper .button:first-child {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.two-button-wrapper .button:last-child {
+    padding-right: 0px;
+}
+
+.ios .payment-btn-ghost {
+    background: none !important;
+    color: #2196F3 !important;
+}
+
+.payment-body .alert-success {
+    margin-bottom: 30px;
+}
+
+.payment-body .alert-success span {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    top: -2px;
+}
+
+.payment-body .alert-success p {
+    display: table-cell;
+    position: relative;
+    padding-left: 25px;
+    vertical-align: middle;
+}
+
+.payment-divider {
+    margin-bottom: 15px;
+}
+
+
+
+@media (min-width: 768px) {
+
+    .ios .kimano-phone {
+        width: 400px;
+        background: transparent;
+
+    }
+    .payment-main-content-wrapper {
+        width: 400px;
+        border-radius: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .payment-header {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .ios .button:last-child > button {
+        margin-bottom: 26px;
+    }
+
+
 }
