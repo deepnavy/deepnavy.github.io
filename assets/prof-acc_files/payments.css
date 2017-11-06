@@ -152,7 +152,7 @@
         font-weight: 400;
     }
 
-    .two-button-wrapper .button:last-child {
+    .ios .two-button-wrapper .button:last-child {
         padding-left: 0px;
     }
 
@@ -162,6 +162,8 @@
         font-weight: 200 !important;
     }
 }
+
+
 
 @media (min-width: 768px) {
 
@@ -195,6 +197,8 @@
 .android .btn-group .btn {
     outline: none!important;
 }
+
+
 
 .ios .btn-group .active {
     background-color: #0080FF;
@@ -233,7 +237,9 @@
 .two-button-wrapper .button:first-child {
     padding-left: 0px;
     padding-right: 0px;
+    margin-top: 0px;
 }
+
 
 .two-button-wrapper .button:last-child {
     padding-right: 0px;
@@ -303,6 +309,11 @@
 
 .android .payment-btn-ghost {
     background-color: #e2e2e2 !important;
+    color: #1f1f1f
+}
+
+.android .payment-btn-ghost:hover {
+    background-color: #c9c9c9 !important;
     color: #1f1f1f
 }
 
