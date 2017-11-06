@@ -1,0 +1,139 @@
+.ios .inner-wrapper, .iandroid .inner-wrapper {
+    padding: 0px;
+    background: #ffffff;
+}
+
+.ios .container, .iandroid .container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.payment-header {
+    background-color: #EFEFEF;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-body {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.payment-header .title {
+    margin-bottom: 0px;
+}
+
+.logo-payment {
+    background: none;
+    width: 80px;
+    height: auto;
+    margin: auto 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.title {
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.payment-features {
+    color: #111;
+    background-color: #FAFAFA;
+    border-color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+
+.payment-features li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.payment-features li:last-child{
+    margin-bottom: 5px;
+}
+
+
+.payment-features ul{
+    width: 80%;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .payment-features ul{
+        width: 90%;
+        padding: 0px;
+        margin: 0 auto;
+    }
+}
+
+
+.payment-features li:before{
+    content: '';
+    display: table-cell;
+    height: 18px;
+    width: 18px;
+    background-image: url('/assets/prof-acc_files/tick.png');
+    background-size:contain; background-repeat:no-repeat;
+    margin-right: 5px;
+    top: 1px;
+    position: relative;
+}
+
+.payment-features span {
+    display: table-cell;
+    position: relative;
+    left: 5px;
+}
+
+.price {
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 10px; 
+}
+
+.price span {
+    position: relative;
+    left: 2px;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.ios .button > button {
+    text-transform: capitalize;
+    padding: 7px 20px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 16px;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    background: #2196F3;
+    border: none;
+    font-weight: 200;
+}
+
+.ios .button > button:hover, .ios .button > button:active, .ios .button > button:focus {
+    color: #fff !important;
+    background: #1D86CC !important;
+
+}
+
+.payment-detals {
+    text-align: center;
+    margin-bottom: 16px;
+    color: #9e9e9e;
+    line-height: 16px;
+    font-size: 12px;
+}
