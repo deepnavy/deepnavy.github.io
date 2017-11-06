@@ -128,7 +128,7 @@
     display: inline-block;
     background: #2196F3;
     border: none;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .payment-primary {
@@ -143,13 +143,13 @@
         cursor: pointer;
         margin-top: 0px;
         margin-bottom: 16px;
-        font-size: 18px;
+        font-size: 20px;
         width: 100%;
         text-align: center;
         display: inline-block;
         background: transparent;
         border: none;
-        font-weight: 200;
+        font-weight: 400;
     }
 
     .two-button-wrapper .button:last-child {
