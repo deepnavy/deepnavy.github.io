@@ -228,7 +228,7 @@
 .ios .payment-btn-ghost {
     background: none !important;
     color: #2196F3 !important;
-    font-weight: 200;
+    font-weight: 200 !important;
 }
 
 .payment-body .alert-success {
