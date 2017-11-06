@@ -149,7 +149,7 @@
         display: inline-block;
         background: transparent;
         border: none;
-        font-weight: 400;
+        font-weight: 200;
     }
 
     .two-button-wrapper .button:last-child {
@@ -228,6 +228,7 @@
 .ios .payment-btn-ghost {
     background: none !important;
     color: #2196F3 !important;
+    font-weight: 200;
 }
 
 .payment-body .alert-success {
