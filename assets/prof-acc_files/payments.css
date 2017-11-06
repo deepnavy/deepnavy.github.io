@@ -155,13 +155,22 @@
     .two-button-wrapper .button:last-child {
         padding-left: 0px;
     }
+
+    .ios .payment-btn-ghost {
+        background: none !important;
+        color: #2196F3 !important;
+        font-weight: 200 !important;
+    }
 }
 
-/* .ios .button > button:hover, .ios .button > button:active, .ios .button > button:focus {
-    color: #fff !important;
-    background: #1D86CC !important;
+@media (min-width: 768px) {
 
-} */
+    .ios .button > button:hover, .ios .button > button:active, .ios .button > button:focus {
+        color: #fff !important;
+        background: #1D86CC !important;
+
+    } 
+}
 
 .payment-detals {
     text-align: center;
@@ -215,6 +224,11 @@
 .two-button-wrapper {
     display: flex;
 }
+
+/* .two-button-wrapper button {
+    float: right;
+    display: block;
+} */
 
 .two-button-wrapper .button:first-child {
     padding-left: 0px;
