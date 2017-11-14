@@ -265,12 +265,35 @@
 
 /* related news */
 
-.related-news-wrapper {
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+#related-news-container {
     background-color: #f3f3f3;
-    margin-bottom: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    #related-news-container {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+}
+
+
+#related-news-container:before, #related-news-container:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 9600px;
+    right: 100%;
+    background: #f3f3f3;
+  }
+
+  #related-news-container:after { 
+    width: 320px;
+    left: 100%;
+    /* you're free to do something totally different here */
+    background: #f3f3f3;
+  }
 
 .related-news-header {
     padding-right: 15px;
