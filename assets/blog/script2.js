@@ -23,7 +23,9 @@ $('.equal-height').responsiveEqualHeightGrid();
 // make card clickable
 $('.card').click(function() {
   var href = $(this).find('a').attr('href');
-  window.location.href = href;
+  if(!event.ctrlKey && !event.metaKey) {
+    window.location.href = href;
+  }
 });
 
 
