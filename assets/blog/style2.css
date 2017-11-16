@@ -289,7 +289,7 @@
   }
 
   #related-news-container:after { 
-    width: 320px;
+    width: 900px;
     left: 100%;
     /* you're free to do something totally different here */
     background: #f3f3f3;
@@ -584,6 +584,129 @@
 .instruction-tabs ul li {
     margin-bottom: 0px;
 }
+
+
+/* journalists landing*/
+
+.cta-container {
+    padding: 100px 15px;
+}
+
+.cta-container p {
+    margin-bottom: 20px;
+}
+
+html, body {
+    overflow-x: hidden;
+  }
+
+.email-cta {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .email-cta {
+        width: 100%;
+    }
+
+    .cta-container {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .journalists-features {
+        padding-top: 10px !important;
+        padding-bottom: 20px !important;
+    }
+}
+
+.email-cta input {
+    margin-bottom: 10px;
+}
+
+.email-cta .btn-cta {
+    width: 100%;
+}
+
+.journalists-features {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.journalists-features h2 {
+    margin-bottom: 30px;
+}
+
+.circle-head {
+    color: #FFFFFF;
+    height: 80px;
+    margin: 0 auto -40px;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+    width: 80px;
+    z-index: 2;
+}
+
+.circle-head img {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}
+
+.features-card .card-body {
+    padding-top: 40px;
+}
+
+.features-card {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    position: relative;
+}
+
+.features-card p {
+    font-size: 12px;
+}
+
+.contact-widget {
+    padding: 10px;
+    margin: 20px auto;
+    width: 280px;
+    cursor: pointer;
+}
+
+.contact-widget h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.contact-widget img {
+    width: 50px;
+    height: 50px;
+}
+
+.contact-widget .media-body {
+    text-align: left;
+}
+
+.contact-widget .media-left {
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+.contact-widget .facebook-badge {
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+
+/* journalists landing end */
 
 
 
