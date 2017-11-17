@@ -35,6 +35,7 @@
     <script src="/assets/news-page_files/script.js"></script>
     <script src="/assets/news-page_files/moment.min.js"></script>
     <script src="/assets/news-page_files/bootstrap-datetimepicker.min.js"></script>
+    <script src="/assets/validator.js"></script>
 
     <script src="/assets/blog/grids.min.js"></script>
     
@@ -122,8 +123,19 @@
         <h2>Opendatabot для журналістів</h2>
         <p>Opendatabot — сервіс моніторінгу даних українських компаній та судового реєстру, Ми допоможемо вам зробити ваші журналістські розслідування інформативнішими</p>
         <div class="form-group email-cta">
-                <input type="email" class="form-control" id="" placeholder="Введіть ваш E-mail">
+            <form data-toggle="validator" role="form">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputEmail" data-error="Будь ласка, перевірте введений E-mail" placeholder="Введіть ваш E-mail" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
                 <button class="btn btn-primary btn-cta" type="submit">Отримати професійний доступ</button>
+            </form>
+            <div class="alert alert-success" role="alert">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                <p><strong>Дякую, за проявлений інтерес!</strong> <br>
+                Вам на E-mail надійде лист з подальшими інструкціями</p>
+            </div>
         </div>
     </div>
 

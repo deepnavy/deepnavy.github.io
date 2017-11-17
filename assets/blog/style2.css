@@ -705,6 +705,25 @@ html, body {
     height: 16px;
 }
 
+.email-cta .alert-success {
+    display:none;
+}
+
+.email-cta .alert-success span {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    top: -2px;
+}
+
+.email-cta .alert-success p {
+    display: table-cell;
+    position: relative;
+    padding-left: 25px;
+    vertical-align: middle;
+    text-align: left;
+}
+
 
 /* journalists landing end */
 
