@@ -134,3 +134,96 @@
 
 
 
+/* header customization */
+
+header .main-search {
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.menu-container {
+    margin-top: 20px;
+}
+
+.js .js-hide {
+    display: none; 
+}
+
+.lang-select label {
+    display: none;
+}
+
+#field-lang-select {
+    width: 120px;
+}
+
+header .additional {
+    width: 190px;
+}
+
+.user-account-action li {
+    padding-left: 0px !important;
+    display: inline-block !important;
+    width: auto !important;
+    margin-left: 10px;
+    color: #fff! important;
+}
+
+.user-account-action li a {
+    color: #fff! important;
+    font-family: "ProbaProBold", "SourceSansProBold";
+}
+
+.user-account-action span:first-child {
+    
+}
+
+#language-choise-group {
+    margin-top: -5px; 
+}
+
+#language-choise-group>.active {
+    border: 2px solid #6b7588 !important;
+    background-color: transparent;
+    border-radius: 4px;
+    box-shadow: none!important;
+    color: #fff!important;
+}
+
+#language-choise-group .btn.active.focus {
+    outline: none;
+}
+
+#language-choise-group>.btn {
+    border: 2px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    color: #6b7588;
+}
+
+#language-choise-group>.btn:hover {
+    color: #fff!important;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+
+header .main-search span {
+    font-family: 'Glyphicons Halflings';
+    color: #333;
+}
+
+
+@media screen and (max-width: 768px) {
+    .main-search {
+        display: none;
+    }
+}
+
+
+
