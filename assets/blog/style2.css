@@ -495,12 +495,6 @@
 }
 
 
-.instructions-wrapper {
-    padding-top: 15px;
-    padding-bottom: 10px;
-    background-color: #fafafa;
-    /* margin-bottom: 20px; */
-}
 
 .instructions {
     -webkit-box-pack: center;
@@ -515,6 +509,14 @@
 
     display: flex;
     flex-wrap: wrap;
+    background-color: #f8f8f8 !important;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.instructions:before, .instructions:after {
+    background-color: #f8f8f8 !important;
 }
 
 .instructions-header { 
@@ -534,19 +536,19 @@
     padding-left: 15px;
 }
 
-.instructions-wrapper ul li {
+.instructions ul li {
     margin-bottom: 15px;
 }
 
 
-.instructions-wrapper .instructions p {
+.instructions p {
     display: inline;
     position: relative;
     left: 12px;
     top: 1px;
 }
 
-.instructions-wrapper .instructions .label {
+.instructions .label {
     padding: .6em .8em .6em;
     float: left;
     display: block;
