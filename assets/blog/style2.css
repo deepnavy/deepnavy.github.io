@@ -46,7 +46,7 @@
 }
 
 .card-body {
-    padding: 5px 16px;
+    padding: 10px 20px;
 }
 
 .card-title {
@@ -509,14 +509,15 @@
 
     display: flex;
     flex-wrap: wrap;
-    background-color: #f8f8f8 !important;
+    background-color: #fafafa !important;
 
     padding-top: 30px;
     padding-bottom: 30px;
+    font-size: 14px;
 }
 
 .instructions:before, .instructions:after {
-    background-color: #f8f8f8 !important;
+    background-color: #fafafa !important;
 }
 
 .instructions-header { 
@@ -673,6 +674,17 @@ html, body {
     font-size: 12px;
 }
 
+.features-card .card-body>button {
+    display: block;
+    margin-bottom: 10px;
+    font-size:12px;
+    width: 100%;
+}
+
+.features-card .card-body>button a:hover {
+    text-decoration: none;
+}
+
 .contact-widget {
     padding: 10px;
     margin: 20px auto;
@@ -724,6 +736,10 @@ html, body {
     padding-left: 25px;
     vertical-align: middle;
     text-align: left;
+}
+
+#sign-up-for-pro:focus {
+    outline: none;
 }
 
 
