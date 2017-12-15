@@ -561,12 +561,13 @@
 }
 
 .screen-gif {
-    z-index: 0;
+    /* z-index: 0;
     position: absolute;
     width: 82%;
     height: auto;
     top: 12%;
-    left: 9%
+    left: 9% */
+    margin: 0 auto;
 }
 
 .instructions-img {
@@ -579,6 +580,10 @@
     font-size: 12px;
 }
 
+.instruction-tabs {
+    display: none;
+}
+
 .iphone-mockup {
     z-index: 1;
     position: relative;
@@ -586,6 +591,31 @@
 
 .instruction-tabs ul li {
     margin-bottom: 0px;
+}
+
+.instructions-text .messenger-choise {
+    position: relative;
+    left: 12px;
+    top: 10px;
+}
+
+.instructions-text .messenger-choise li {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.instructions-text .messenger-choise li a {
+    color: #adadad;
+}
+
+.instructions-text .messenger-choise li.active {
+    font-weight: bold;
+    color: #428bca;
+}
+
+.instructions-text .messenger-choise li.active a {
+    color: #428bca !important;
 }
 
 
