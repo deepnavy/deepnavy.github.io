@@ -777,6 +777,97 @@ html, body {
 
 
 
+/* relink c */
+
+.bottom-nav {
+    background: #f3f3f3;
+    margin-bottom: 30px;
+}
+
+.bottom-nav:before, .bottom-nav:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 9600px;
+    right: 100%;
+    background: #f3f3f3;
+}
+
+.bottom-nav:after { 
+    width: 900px;
+    left: 100%;
+    background: #f3f3f3;
+}
+
+.social-buttons {
+    margin-bottom: 30px;
+}
+
+.pager li>a, .pager li>span {
+
+    /* max-width: 200px; */
+    background-color: transparent; 
+    border: none; 
+    line-height: 1.7;
+    padding: 5px 2px;
+}
+
+/* .pager li>a {
+    vertical-align: middle;
+}
+
+.bottom-nav .pager .next>a, .bottom-nav .pager .next>span {
+    float: none;
+}
+
+.bottom-nav .pager .next {
+    float: right;
+} */
+
+.bottom-nav .pager .nav-ellipsis {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    display: inline-block;
+    line-height: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .bottom-nav .pager .nav-ellipsis {
+        max-width: 200px;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .bottom-nav .pager .nav-ellipsis {
+        max-width: 120px;
+    }
+    
+}
+
+.bottom-nav .glyphicon {
+    line-height: inherit;
+}
+
+.bottom-nav .pager a, .bottom-nav .pager span {
+    color: #333;
+}
+
+.bottom-nav .pager li>a:hover, .bottom-nav .pager li>a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    color: #777;
+}
+
+.bottom-nav .pager li>a:hover span, .bottom-nav .pager li>a:focus span {
+    color: #777;
+}
+
+
 
 
 
