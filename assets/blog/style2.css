@@ -185,6 +185,7 @@
 
 .instruction-tabs {
     padding: 0px;
+    margin-top: 10px;
 }
 
 .instruction-tabs .tabs-wrapper {
@@ -260,7 +261,7 @@
 }
 
 .instruction-tabs .nav-tabs-dropdown:before {
-    right: 10%;
+    right: 20px;
   }
 
 /* related news */
@@ -580,9 +581,9 @@
     font-size: 12px;
 }
 
-.instruction-tabs {
+/* .instruction-tabs {
     display: none;
-}
+} */
 
 .iphone-mockup {
     z-index: 1;
