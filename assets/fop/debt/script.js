@@ -84,11 +84,12 @@ function loadData() {
     .defer(d3.csv, "/assets/fop/debt/odb-notifications.csv") 
     .defer(d3.csv, "/assets/fop/debt/activity-companies.csv") 
     .defer(d3.csv, "/assets/fop/debt/activity-fop.csv") 
+    .defer(d3.csv, "/assets/fop/debt/debt-overall.csv") 
     .await(processData);  
 }
 
 
-function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasses, chart1Data, chart2Data, odbUsers, odbNotifications, activityCompanies, activityFop) {
+function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasses, chart1Data, chart2Data, odbUsers, odbNotifications, activityCompanies, activityFop, debtOverall) {
     if (error) return console.error(error);
 
     var template = _.template(d3.select('#tooltip-template').html());
@@ -277,6 +278,8 @@ function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasse
 
     function activityType(data, elementId, type) {
 
+        data = data.slice(0, 10);
+
         data.forEach(function(d) {
             // d.date = parseTime(d.date);
             d.quantity = +d.quantity;
@@ -288,7 +291,7 @@ function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasse
         console.log(maxActivityQuantity);
 
         names = data.map(function(entry){
-            return entry.activity;
+            return entry.name;
         });
 
         activityQuantity = data.map(function(entry){
@@ -305,7 +308,7 @@ function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasse
             d3.select(this)
                 .append("div")
                 .attr('class', 'activity-name')
-                .html(d.activity);
+                .html(d.name);
 
             d3.select(this)
                 .append("div")
@@ -315,8 +318,7 @@ function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasse
             d3.select(this)
                 .append("hr")
                 .attr('class', 'activity-length')
-                .style("width", d.quantity/maxActivityQuantity*100 + "%")
-                .html(d.activity);
+                .style("width", d.quantity/maxActivityQuantity*100 + "%");
           });
 
     }
@@ -445,8 +447,9 @@ function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasse
     // bubbleChart2(topNalogData, "#bubbleChart3");
     buildChartD3(chart2Data, "#chart1");
     buildChartD3(chart1Data, "#chart2");
-    buildChartD3OneLine(odbUsers, "#chart3")
-    buildChartD3OneLine(odbNotifications, "#chart4")
+    buildChartD3OneLine(odbUsers, "#chart3", true)
+    buildChartD3OneLine(odbNotifications, "#chart4", true)
+    buildChartD3OneLine(debtOverall, "#chart-debt", false)
 }
 init();
 
@@ -510,7 +513,13 @@ function buildChartD3 (dataVar, chartId){
         y.domain([0, yMax]);
 
         var xAxis = d3.axisBottom().scale(x);
-        var xAxis2 = d3.axisBottom().scale(x2);
+        if (Math.max(width/75, 2) < 7) {
+            var ticks = x2.domain().filter(function(d,i){ return !(i%2); } );
+            xAxis2 = d3.axisBottom().tickValues(ticks).scale(x2);
+        }
+        else {
+            xAxis2 = d3.axisBottom().scale(x2);
+        }
         var yAxis = d3.axisLeft().scale(y)
             .tickSizeInner(-width)
             .tickSizeOuter(0);
@@ -656,11 +665,21 @@ function buildChartD3 (dataVar, chartId){
       overlay
       .attr("width", width)
       .attr("height", height);
+        console.log(Math.max(width/75, 2));
+    if (Math.max(width/75, 2) < 7) {
+      var ticks = x2.domain().filter(function(d,i){ return !(i%2); } );
+      xAxis2 = d3.axisBottom().tickValues(ticks).scale(x2);
+    }
+    else {
+        xAxis2 = d3.axisBottom().scale(x2);
+    }
+
+    console.log(ticks);
 
     yAxis = d3.axisLeft().scale(y)
             .tickSizeInner(-width)
-            .tickSizeOuter(0);
-            // .ticks(Math.max(width/75, 2));;
+            .tickSizeOuter(0)
+            .ticks(Math.max(height/50, 2));
 
       // Update the axis and text with the new scale
       svg.select(chartId +' .x.axis')
@@ -702,7 +721,7 @@ function buildChartD3 (dataVar, chartId){
     // resizeChart();
 }
 
-function buildChartD3OneLine (dataVar, chartId){
+function buildChartD3OneLine (dataVar, chartId, fromZero){
     var margin = {top: 20, right: 20, bottom: 30, left: 30},
     chartRatio = .5,
     width = parseInt(d3.select(chartId).style("width")) - margin.left - margin.right,
@@ -748,10 +767,22 @@ function buildChartD3OneLine (dataVar, chartId){
         x2.domain(dataVar.map(function(entry){
             return entry.month_ticks;
         }));
-        y.domain([0, d3.max(dataVar, function(d) { return d.quantity; })]);
+        if (fromZero == true){
+            y.domain([0, d3.max(dataVar, function(d) { return d.quantity; })]);
+        }
+        else {
+            var min = d3.min(dataVar, function(d) { return d.quantity; });
+            y.domain([min - min*0.05, d3.max(dataVar, function(d) { return d.quantity; })]);
+        }
 
         var xAxis = d3.axisBottom().scale(x);
-        var xAxis2 = d3.axisBottom().scale(x2);
+        if (Math.max(width/75, 2) < 7) {
+            var ticks = x2.domain().filter(function(d,i){ return !(i%2); } );
+            xAxis2 = d3.axisBottom().tickValues(ticks).scale(x2);
+        }
+        else {
+            xAxis2 = d3.axisBottom().scale(x2);
+        }
         var yAxis = d3.axisLeft().scale(y)
             .tickSizeInner(-width)
             .tickSizeOuter(0);
@@ -872,6 +903,14 @@ function buildChartD3OneLine (dataVar, chartId){
             .tickSizeInner(-width)
             .tickSizeOuter(0);
             // .ticks(Math.max(width/75, 2));;
+
+    if (Math.max(width/75, 2) < 7) {
+      var ticks = x2.domain().filter(function(d,i){ return !(i%2); } );
+      xAxis2 = d3.axisBottom().tickValues(ticks).scale(x2);
+    }
+    else {
+        xAxis2 = d3.axisBottom().scale(x2);
+    }
 
       // Update the axis and text with the new scale
       svg.select(chartId +' .x.axis')
