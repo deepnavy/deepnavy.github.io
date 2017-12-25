@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://opendatabot.com/fop -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Відслідковуйте закриття ФОПів в&nbsp;реальному часі (оновлення 27.03)</title>
+        
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="noindex">
+
+                        <meta property="og:url" content="https://opendatabot.com/fop">
+            <meta property="og:title" content="Відслідковуйте закриття ФОПів в реальному часі (оновлення 27.03)">
+                            <meta property="og:description" content="З моменту підписання закону кількість приватних пдіприємців зменьшилась на 253 тисяч">
+                        <meta property="og:image" content="https://drfw5o9qqiceq.cloudfront.net/dynamic/assets/0/613.png">
+            
+    <link rel="stylesheet" href="/assets/fop/bootstrap.min.css">
+    <link href="/assets/fop/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/fop/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/assets/fop/style.css">
+                <!--    <link rel="stylesheet" href="/styles/docs.min.css">-->
+    <link rel="stylesheet" href="/assets/fop/company-search.css">
+    <link rel="stylesheet" href="/assets/fop/jquery-ui.min.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <script async="" src="/assets/fop/analytics.js"></script><script src="/assets/fop/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
+    <script src="/assets/fop/jquery.min.js"></script>
+    <script src="/assets/fop//bootstrap.min.js"></script>
+    <script src="/assets/fop/jquery.tablesorter.js"></script>
+    <script src="/assets/fop/clipboard.min.js"></script>
+    <script src="/assets/fop/jquery-ui.min.js"></script>
+    <script src="/assets/fop/script.js"></script>
+    <script src="/assets/fop/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- styles for infographics -->
+     <link rel="stylesheet" href="/assets/fop/infographics/infographics.css">
+    <!-- dependencies for charts js -->
+    <script src="/assets/fop/infographics/Chart.min.js"></script>
+    <!-- d3js map and table barchart dependencies -->
+    <script src="/assets/fop/infographics/colorbrewer.js"></script>
+    <script src="/assets/fop/infographics/underscore-min.js"></script>
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <!--<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>-->
+    <script src="/assets/fop/infographics/tooltip.js"></script>
+    
+    <script src="/assets/fop/infographics/moment-with-locales.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+
+    <script src="/assets/fop/infographics/html2canvas.js"></script>
+    <script src="/assets/fop/infographics/html2canvas.svg.js"></script>
+    <script src="/assets/fop/debt/d3-tip.js"></script>
+
+    
+    <!-- jQuery library -->
+
+    <!-- Latest compiled JavaScript -->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1113296-93', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</head>
+<body cz-shortcut-listen="true">
+    <div class="navbar-inverse" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://opendatabot.com/" class="navbar-brand"><img src="/assets/fop/logo.png" class="img-circle logo" width="36" height="36">Opendatabot</a>
+<!--                <a href="/"><img src="/images/odb.png" class="logo"></a>-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                                        <li></li>
+                    <li>
+                                                    <a href="https://opendatabot.com/fop">Закриття ФОП</a>
+                                            </li>
+                    <li>
+                                                    <a href="https://opendatabot.com/blog">Відкриті дані</a>
+                                            </li>
+                    <li>
+                                                    <a href="https://opendatabot.com/blog/27-api-for-all">API</a>
+                                            </li>
+                    <li>
+                                                    <a href="https://telegram.me/OpenDeclarationBot">Бот декларацій</a>
+                                            </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                                                    <a href="https://opendatabot.com/fop#" class="dropdown-toggle" data-toggle="dropdown">Українська <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://opendatabot.com/ru">Русский</a></li>
+                                <li><a href="https://opendatabot.com/en">English</a></li>
+                            </ul>
+                                            </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+<div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 tinted">
+
+        <div class="section-lead">
+                <img src="/assets/fop/infographics/pic1.png">
+            <h1>Підсумки 2017 від Opendatabot</h1>
+            <hr>
+            <p>Чого досягла держава у сфері відкритих даних, бізнес і команда Opendatabot</p>
+        </div>
+    
+    </div>
+</div>
+
+<div class="row"><div class="col-xs-12 col-md-6 col-md-offset-3">
+    <h3>Відкриті дані
+        </h3>
+    <p>
+            Відкриті дані - основа діяльності Opendatabot. Найбільше досягнення цього року -  відкриття реєстру бенефіціарів. Окрім цього, на основі відкритих даних ми провели більше 60 розслідувань і зрозуміли, що відбувається з українським бізнесом. 
+    </p>
+    <h3>Україна відкрила
+        </h3>
+    <div class="well">
+            <ul>
+                <li>
+                        Реєстр бенефіціарів
+                </li>
+                <li>
+                        Судовий реєстр
+                </li>
+            </ul>
+    </div>
+</div></div>
+
+<div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3 tinted">
+    
+            <div class="section-lead">
+                    <img src="/assets/fop/infographics/pic1.png">
+                <h1>БІЗНЕС</h1>
+                <hr>
+                <p>Завдяки відкритим даним ми краще розуміємо, що відбувається з українським бізнесом</p>
+            </div>
+        
+        </div>
+    </div>
+
+<div class="row">
+        <div class="graphics-container">
+            <div class="col-xs-12 col-md-5 my-auto">
+                <div class="graphics-description tinded-description">
+                    <h3>Нові компанії</h3>
+                    <hr>
+                    <p>
+                            В 2017 році в Україні було відкрито 71 043 компаній та 242 013 ФОП. Щотижня в Україні реєструється 1 366 компанії, а закривається 419.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-7 my-auto">
+                    <div id='tooltipchart1' class="tooltip-chart">
+                            <div class="month-label"></div>
+                        <div class="opened-label">Відкрито</div><span class="open-placeholder"></span><div class="closed-label">Закрито</div><span class="closed-placeholder"></span>
+                    </div>
+                <div id="chart1" class="chart"></div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+        <div class="col-md-12 col-xs-12 graphics-container tinted">
+            <div class="col-xs-12 col-md-5 my-auto">
+                <div class="graphics-description tinded-description">
+                    <h3>Закриття ФОП</h3>
+                    <hr>
+                    <p>
+                            У зв’язку з тим, що Президент підписав указ про оподаткування ФОП, за перші кілька місяців 2017 року було закрито понад 300 тисяч ФОП, а відкрилось тілки 50 тисяч. В квітні цей процес припинився.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-7 my-auto">
+                    <div id='tooltipchart2' class="tooltip-chart">
+                            <div class="month-label"></div>
+                        <div class="opened-label">Відкрито</div><span class="open-placeholder"></span><div class="closed-label">Закрито</div><span class="closed-placeholder"></span>
+                    </div>
+                <div id="chart2" class="chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-md-12 col-xs-12 graphics-container">
+                <div class="col-xs-12 col-md-5 my-auto">
+                    <div class="graphics-description tinded-description">
+                        <h3>Області</h3>
+                        <hr>
+                        <p>
+Найбільше компаній працює в <b>Київській, Дніпропетровській та Одеській області</b>. <br>Найменш активні — <b>Тернопільська, Сумська та Чернівецька область</b>.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                        <!-- <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#map1-placeholder" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                                <li role="presentation"><a href="#map2-placeholder" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                              </ul> -->
+                    <!-- <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="map1-placeholder"> -->
+                            <div id="map"></div>
+                        <!-- </div>
+                        <div role="tabpanel" class="tab-pane" id="map2-placeholder">
+                            <div id="map2"></div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-offset-2 col-md-8 col-xs-12 graphics-container tinted">
+                    
+                        <div class="col-md-12 col-xs-12 graphics-description full-width">
+                            <h3>Види діяльності</h3>
+                            <hr>
+                            <p>
+                                    Найбільш популярні види бізнесу — оптова торгівля, діяльність громадських організацій та сільське господарство. 
+
+                            </p>
+                        </div>
+                    
+                    <div class="col-xs-12 col-md-12">
+
+                         <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#companies" aria-controls="home" role="tab" data-toggle="tab">Комнанії</a></li>
+                                <li role="presentation"><a href="#fop" aria-controls="profile" role="tab" data-toggle="tab">ФОП</a></li>
+                              </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="companies">
+                                    <div id="companies-activity-container"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="fop">
+                                    <div id="fop-activity-container"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+        
+                <div class="section-lead">
+                        <img src="/assets/fop/infographics/pic1.png">
+                    <h1>Результати Opendatabot</h1>
+                    <hr>
+                    <p>Opendatabot об’єднав основні реєстри країни й перетворився на платформу для роботи з відкритими даними. Наші користувачі можуть дізнатися, що про них знає держава, або створити власний сервіс на основі відкритих даних, які ми надаємо у зручній формі</p>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-12 col-xs-12 graphics-container tinted">
+                    <div class="col-xs-12 col-md-5 my-auto">
+                        <div class="graphics-description tinded-description">
+                            <h3>Користувачі Opendatabot</h3>
+                            <hr>
+                            <p>
+                                    У 2017 році Opendatabot використовували 69 616 людини. З них 12% - використовують сервіс щоденно
+        
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-7 my-auto">
+                            <div id='tooltipchart3' class="tooltip-chart">
+                                    <div class="month-label"></div>
+                                <div class="odb-label">Кількість користувачів</div><span class="odb-placeholder"></span>
+                            </div>
+                        <div id="chart3" class="chart"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-xs-12 graphics-container">
+                    <div class="col-xs-12 col-md-5 my-auto">
+                        <div class="graphics-description tinded-description">
+                            <h3>Кількість повідомлень</h3>
+                            <hr>
+                            <p>
+                                    Щодня Opendatabot отримує 39 870 запити. Загалом за 2017 рік ми обробили понад 2 073 243 запитів.
+        
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-7 my-auto">
+                            <div id='tooltipchart4' class="tooltip-chart">
+                                    <div class="month-label"></div>
+                                <div class="odb-label">Кількість повідомлень</div><span class="odb-placeholder"></span>
+                            </div>
+                        <div id="chart4" class="chart"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row"><div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <h3>Додані в Опендатабот
+                        </h3>
+                    <div class="well">
+                            <ul>
+                                <li>
+                                        Реєстр бенефіціарів
+                                </li>
+                                <li>
+                                        Реєстр осіб, які переховуються від органів влади
+                                </li>
+                                <li>
+                                        Дані по комплексним перевіркам на 2018 рік
+                                </li>
+                                <li>
+                                        Судовий розклад
+                                </li>
+                                <li>
+                                        Реєстр банкрутств
+                                </li>
+                                <li>
+                                        Податкові борги ФОП
+                                </li>
+                            </ul>
+                    </div>
+                </div></div>
+
+                <div class="row">
+                        <div class="col-xs-12 col-md-8 col-md-offset-2 tinted">
+                    
+                            <div class="section-lead">
+                                    <img src="/assets/fop/infographics/pic1.png">
+                                <h1>З новим роком!</h1>
+                                <hr>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+    <div class="row"><div class="col-xs-12 col-md-8 col-md-offset-2">
+    
+
+
+
+    <!-- <div id="map2">
+
+    </div>
+
+    <div class="page-header">
+
+            <h4>Статистика боргів ФОП за галузями з
+    </h4>
+    </div>
+
+    <div id="classesTable1"></div>
+
+    <div class="page-header">
+
+            <h4>Статистика боргів компаній за галузями 
+    </h4>
+    </div>
+
+    <div id="classesTable2"></div>
+
+
+    <div class="page-header">
+
+            <h4>Топ 100 ФОП за богами 
+    </h4>
+    </div>
+
+    <div id="bubbleChart"></div>
+
+    <div class="page-header">
+
+            <h4>Топ 100 Компаній за богами 
+    </h4>
+    </div>
+
+    <div id="bubbleChart2"></div>
+
+    <div class="page-header">
+
+            <h4>Топ 100 Компаній за богами 
+    </h4>
+    </div>
+
+    <div id="bubbleChart3"></div>  -->
+
+
+
+    <!-- building infographics -->
+    <script type="x-jst" id="tooltip-template">
+        <h5><%= region %>.</h5>
+        <p><font color="#9BC53D"><%= quantity %></font> <%= type %></p>
+    </script>
+
+    <script type="x-jst" id="tooltip-template2">
+        <h6><%= name %>.</h6>
+        <p><b>Сума боргу: </b><font color="#E55934"><%= debt %></font> грн </p>
+    </script>
+    <script type="x-jst" id="tooltip-template-chart">
+            <p><b>компаній: </b><font color="#E55934"><%= close %></font> </p>
+        </script>
+    <script src="/assets/fop/debt/script.js"></script>
+
+</div></div></div></div>
+<hr class="half-rule">
+<div class="starter-template text-center">
+            <h2>Початок роботи</h2>
+        <p class="lead">Додайте OpenDataBot до улюбленного мессенджеру</p>
+    </div>
+<div class="lyrow">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12 botlink">
+            <div class="thumbnail non-border">
+                <a href="https://join.skype.com/bot/34fa3a55-00ae-4d50-873c-6a2cd41dab78" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Skype&#39;);">
+                    <img src="./fop_files/skype.png" width="120">
+                </a>
+                <div class="caption text-center">
+                                            <p>OpenDataBot для Skype</p>
+                                        <p>
+                        <a href="https://join.skype.com/bot/34fa3a55-00ae-4d50-873c-6a2cd41dab78" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Skype&#39;);" class="btn btn-primary" role="button">
+                                                            ДОДАТИ
+                                                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 botlink">
+            <div class="thumbnail non-border">
+                <a href="http://m.me/OpenDataBot?ref=source_webcom" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Facebook&#39;);">
+                    <img src="./fop_files/fb.png" width="120">
+                </a>
+                <div class="caption text-center">
+                                            <p>OpenDataBot для Facebook</p>
+                                        <p>
+                        <a href="http://m.me/OpenDataBot?ref=source_webcom" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Facebook&#39;);" class="btn btn-primary" role="button">
+                                                            ДОДАТИ
+                                                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 botlink">
+            <div class="thumbnail non-border">
+                <a href="https://telegram.me/OpenDataUABot?start=source_webcom" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Telegram&#39;);">
+                    <img src="./fop_files/tgm.png" width="120">
+                </a>
+                <div class="caption text-center">
+                                            <p>OpenDataBot для Telegram</p>
+                                        <p>
+                        <a href="https://telegram.me/OpenDataUABot?start=source_webcom" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Telegram&#39;);" class="btn btn-primary" role="button">
+                                                            ДОДАТИ
+                                                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 botlink">
+            <div class="thumbnail non-border">
+                <a href="http://viber.com/opendatabot" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Viber&#39;);">
+                    <img src="./fop_files/viber.png" width="120">
+                </a>
+                <div class="caption text-center">
+                                            <p>OpenDataBot для Viber</p>
+                                        <p>
+                        <a href="http://viber.com/opendatabot" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Messenger&#39;, &#39;Click&#39;, &#39;Viber&#39;);" class="btn btn-primary" role="button">
+                                                            ДОДАТИ
+                                                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><hr class="half-rule">
+<div class="row text-center full-width">
+    <iframe src="./fop_files/like.html" class="fb-iframe" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+</div>    </div>
+    <footer class="bs-docs-footer">
+        <div class="container">
+                            <p>Электрона пошта: <a href="mailto:mail@opendatabot.com">mail@opendatabot.com</a></p>
+                <p>Телефон: <nobr>+380 93 160-83-45</nobr></p>
+                <p>Україна, Дніпро, вул. Мечникова 10б, офіс 402</p>
+                        <ul class="bs-docs-footer-links top-links">
+                                    <li><a href="https://opendatabot.com/page/policy">Політика приватності</a></li>
+                    <li><a href="https://opendatabot.com/page/terms">Умови користування</a></li>
+                    <li><a href="https://opendatabot.com/blog/27-api-for-all">Розробникам</a></li>
+                                <li><a href="https://drive.google.com/drive/folders/0B-1iEoUpEQl0eFdNVGptTjh4dVUhttps://drive.google.com/drive/folders/0B-1iEoUpEQl0eFdNVGptTjh4dVU">Press-kit</a></li>
+            </ul>
+            <p>©&nbsp;Opendatabot, 2016—2017</p>
+            <p>Всі матеріали на цьому сайті розміщені на умовах <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode.uk">ліцензії Creative Commons Із Зазначенням Авторства 4.0 Міжнародна</a></p>
+        </div>
+
+        
+
+    </footer>
+
+
+</body></html>
