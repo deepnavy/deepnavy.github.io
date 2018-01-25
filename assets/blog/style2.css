@@ -27,7 +27,7 @@
 
 /* cards */
 
-.mb-4 {
+/* .mb-4 {
     margin-bottom: 25px!important;
 }
 
@@ -37,9 +37,9 @@
     border-radius: .25rem;
     cursor: pointer;
     position: relative;
-}
+} */
 
-.card-img-top {
+/* .card-img-top {
     width: 100%;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
@@ -55,19 +55,19 @@
 
 .card-title a {
     color: #333;
-}
+} */
 
-.card p {
+/* .card p {
     font-size: 12px;
-}
+} */
 
-.card:hover {
+/* .card:hover {
     border-color: #0070BF;
 }
 
 .card-text {
     margin-bottom: 10px;
-}
+} */
 
 /* new navtabs*/
 

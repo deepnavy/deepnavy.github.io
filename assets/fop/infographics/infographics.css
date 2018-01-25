@@ -163,29 +163,10 @@ html, body {
   border-color: #F9C746
 }
 
-.graphics-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.my-auto {
-  margin-bottom: auto!important;
-}
-
-.my-auto {
-  margin-top: auto!important;
-}
-
-.graphics-container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
 
 @media only screen and (min-width : 992px) {
   .graphics-description {
-    width: 350px;
-    margin-left: auto!important;
-    margin-right: auto !important;
+    max-width: 350px;
   }
 
   .graphics-description {
@@ -204,11 +185,6 @@ html, body {
   .graphics-container {
     min-height: 400px;
   }
-
-  .graphics-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
 }
 
 
@@ -220,7 +196,7 @@ html, body {
 }
 
 .graphics-description.full-width {
-  width:100%;
+  max-width:100%;
   margin: 0px;
   padding: inherit;
   padding-bottom: 0;
@@ -444,7 +420,11 @@ html, body {
   margin-bottom: 10px;
 }
 
-.graphics-container .nav-tabs>li.active>a, .graphics-container  .nav-tabs>li.active>a:hover, .graphics-container  .nav-tabs>li.active>a:focus {
+.graphics-container .nav-tabs .nav-link:hover {
+  border-color: transparent;
+}
+
+.graphics-container .nav-tabs>li>a.active, .graphics-container  .nav-tabs>li>a.active:hover, .graphics-container  .nav-tabs>li>a.acrive:focus {
   color: #111;
   background-color: transparent;
   border: none;
@@ -462,6 +442,7 @@ html, body {
   text-decoration: none;
   background-color: transparent;
 }
+
 
 
 @media only screen and (max-width : 768px) {
