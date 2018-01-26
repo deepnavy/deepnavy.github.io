@@ -1,3 +1,12 @@
+html {
+    font-size: 0.9rem;
+}
+/* 
+@media screen and (max-width: 576px) {
+    html {
+        font-size: 0.9rem;
+    }
+} */
 
 .display-1{
 	font-size:2.8rem;
@@ -42,7 +51,7 @@
   }
 
   .instructions .badge {
-    padding: .6em .8em .6em;
+    padding: .6em;
     float: left;
     display: block;
     width: 24px;
@@ -73,4 +82,54 @@ blockquote p {
     width: 30px;
     height: 30px;
 }
+
+
+@media (min-width: 576px) { 
+    .BtnIco{
+        width: 12em;
+        padding-right:1.5em;
+    }
+  }
+  
+  .BtnMsg{
+    background-color: #3685F6;
+    border-color:#1665d6;
+  }
+  
+  .BtnMsg:hover{
+    background-color: #1665d6;
+    border-color:#1665d6;
+  }
+  
+  .BtnTg{
+    background-color: #0098cf;
+    border-color:#0078af;
+  }
+  
+  .BtnTg:hover{
+    background-color: #0078af;
+    border-color:#0078af;
+  }
+  
+  .BtnVb{
+    background-color: #715394;
+    border-color:#513374;
+  }
+  
+  .BtnVb:hover{
+    background-color: #614384;
+    border-color:#614384;
+  }
+  
+  
+  .BtnSk{
+    background-color: #4eaeea;
+    border-color:#2e8eca;
+  }
+  
+  .BtnSk:hover{
+    background-color: #3e9eda;
+    border-color:#3e9eda;
+  }
+  
         

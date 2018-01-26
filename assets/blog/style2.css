@@ -1,73 +1,3 @@
-/* new simpler button style*/
-
-.btn-primary {
-    border: none;
-    background-color: #3297de;
-    /* border-bottom: 4px solid #186092; */
-}
-
-.btn-cta {
-    border-bottom: 2px solid #186092; 
-}
-
-.btn-primary:hover {
-    background-color:#2188d0;
-}
-
-.btn-ghost {
-    border-color: #3297de;
-    color: #3297de;
-}
-
-.btn-ghost:hover {
-    background-color:#2188d0;
-    color: #fff;
-    border-color: transparent !important;
-}
-
-/* cards */
-
-/* .mb-4 {
-    margin-bottom: 25px!important;
-}
-
-.card {
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    cursor: pointer;
-    position: relative;
-} */
-
-/* .card-img-top {
-    width: 100%;
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
-}
-
-.card-body {
-    padding: 10px 20px;
-}
-
-.card-title {
-    margin-bottom: .75rem;
-}
-
-.card-title a {
-    color: #333;
-} */
-
-/* .card p {
-    font-size: 12px;
-} */
-
-/* .card:hover {
-    border-color: #0070BF;
-}
-
-.card-text {
-    margin-bottom: 10px;
-} */
 
 /* new navtabs*/
 
@@ -495,32 +425,8 @@
     display: flex;
 }
 
-
-
-.instructions {
-    background-color: #fafafa !important;
-    font-size: 14px;
-}
-
 .instructions:before, .instructions:after {
     background-color: #fafafa !important;
-}
-
-.instructions-header { 
-    padding-right: 15px;
-    padding-left: 15px; 
-    margin-bottom: 15px;
-}
-
-@media screen and (min-width: 769px) {
-    .instructions-text {
-        padding-left: 0px;
-    }
-}
-
-.instructions-text ul {
-    list-style-type: none;
-    padding-left: 15px;
 }
 
 .instructions ul li {
@@ -535,17 +441,6 @@
     top: 1px;
 }
 
-.instructions .label {
-    padding: .6em .8em .6em;
-    float: left;
-    display: block;
-    width: 24px;
-}
-
-.instructions-text {
-    margin-bottom: 15px;
-}
-
 .screen-gif {
     /* z-index: 0;
     position: absolute;
@@ -554,11 +449,6 @@
     top: 12%;
     left: 9% */
     margin: 0 auto;
-}
-
-.instructions-img {
-    position: relative;
-    padding: 0px;
 }
 
 .instruction-tabs .text-center {
@@ -579,7 +469,7 @@
     margin-bottom: 0px;
 }
 
-.instructions-text .messenger-choise {
+/* .instructions-text .messenger-choise {
     position: relative;
     left: 12px;
     top: 10px;
@@ -602,7 +492,7 @@
 
 .instructions-text .messenger-choise li.active a {
     color: #428bca !important;
-}
+} */
 
 
 /* journalists landing*/
