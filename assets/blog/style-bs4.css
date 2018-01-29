@@ -131,5 +131,30 @@ blockquote p {
     background-color: #3e9eda;
     border-color:#3e9eda;
   }
+
+.bottom-nav a span {
+    max-width: 150px;
+}
+
+@media (min-width: 768px) {
+    .bottom-nav a span {
+        max-width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .bottom-nav a span {
+        max-width: 300px;
+    }
+}
+
+.table td, .table th {
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+}
+
+caption {
+    caption-side: initial;
+}
   
         
