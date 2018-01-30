@@ -33,28 +33,24 @@ html {
 }
 
 
-#tinted-container:before, #tinted-container:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 9600px;
-    right: 100%;
-    background: #f3f3f3;
-  }
 
-  #tinted-container:after { 
-    width: 900px;
-    left: 100%;
-    /* you're free to do something totally different here */
-    background: #f3f3f3;
-  }
-
-  .instructions .badge {
+.instructions .badge {
     padding: .6em;
     float: left;
     display: block;
     width: 24px;
+}
+
+.instructions ul li {
+    margin-bottom: 15px;
+}
+
+
+.instructions p {
+    display: inline;
+    position: relative;
+    left: 12px;
+    top: 1px;
 }
 
 @media (max-width: 767.99px) { 
@@ -133,7 +129,7 @@ blockquote p {
   }
 
 .bottom-nav a span {
-    max-width: 150px;
+    max-width: 130px;
 }
 
 @media (min-width: 768px) {
@@ -156,5 +152,13 @@ blockquote p {
 caption {
     caption-side: initial;
 }
+
+@media (max-width: 767.98px) {
+    .card-deck .card {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+}
+
   
         
