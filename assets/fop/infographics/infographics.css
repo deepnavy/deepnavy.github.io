@@ -198,7 +198,8 @@ html, body {
 .graphics-description.full-width {
   max-width:100%;
   margin: 0px;
-  padding: inherit;
+  padding-right: 15px;
+  padding-left: 15px;
   padding-bottom: 0;
 }
 

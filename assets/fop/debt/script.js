@@ -99,7 +99,7 @@ function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasse
     };
     
 
-    var margin = {top: 10, left: 10, bottom: 10, right: 10}
+    var margin = {top: 10, left: 30, bottom: 10, right: 10}
         , width = parseInt(d3.select('#map').style('width'))
         , width = width - margin.left - margin.right
         , mapRatio = .7
@@ -454,7 +454,7 @@ function processData(error, statsMap, fopClasses, mapData, statsMap2, kompClasse
 init();
 
 function buildChartD3 (dataVar, chartId){
-    var margin = {top: 20, right: 20, bottom: 30, left: 30},
+    var margin = {top: 20, right: 20, bottom: 30, left: 40},
     chartRatio = .5,
     width = parseInt(d3.select(chartId).style("width")) - margin.left - margin.right,
     height = width * chartRatio;
@@ -722,7 +722,7 @@ function buildChartD3 (dataVar, chartId){
 }
 
 function buildChartD3OneLine (dataVar, chartId, fromZero){
-    var margin = {top: 20, right: 20, bottom: 30, left: 30},
+    var margin = {top: 20, right: 20, bottom: 30, left: 50},
     chartRatio = .5,
     width = parseInt(d3.select(chartId).style("width")) - margin.left - margin.right,
     height = width * chartRatio;
