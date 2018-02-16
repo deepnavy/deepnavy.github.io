@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://opendatabot.com/blog/80-calendar -->
+<html class="gr__opendatabot_com">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Як не пропустити судове засідання?</title>
+
+    <meta name="robots" content="noindex">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url" content="https://opendatabot.com/blog/80-calendar">
+    <meta property="og:title" content="Як не пропустити судове засідання?">
+    <meta property="og:description" content="В Opendatabot з’явилася можливість додавати судові засідання в ваш календар. ">
+    <meta name="description" content="В Opendatabot з’явилася можливість додавати судові засідання в ваш календар. ">
+    <meta property="og:image" content="https://drfw5o9qqiceq.cloudfront.net/dynamic/assets/0/738.png
+">
+
+    <link rel="alternate" type="application/rss+xml" title="Відкриті дані - Opendatabot" href="https://opendatabot.com/rss/ua">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/assets/news-page_files/style.css"> -->
+    <link href="/assets/blog/open-iconic-bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/blog/style-bs4.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/queue.v1.min.js"></script>
+    <script src="/assets/validator.js"></script>
+    <link rel="stylesheet" href="/assets/court.css">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-1113296-93', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1503785606589629'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+    <noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1503785606589629&amp;ev=PageView&amp;noscript=1"
+        /&gt;
+    </noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+</head>
+
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+    <header class="navbar navbar-expand navbar-dark bg-dark flex-column flex-md-row bd-navbar" style="background-color:#333;">
+        <a class="navbar-brand mr-0 mr-md-2 d-flex align-items-center" href="/">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" style="cursor:hand;">
+                <g>
+                    <title>Logo Opendatabot</title>
+                    <a href="https://opendatabot.com/">
+                        <path d="m32,16c0,8.83 -7.17,16 -16,16c-8.83,0 -16,-7.17
+                    -16,-16c0,-8.83 7.17,-16 16,-16c8.83,0 16,7.17 16,16z" fill="#0099ee" />
+                        <path d="m16,32c8.84,0 16,-7.16 16,-16c0,0 0,0
+                    0,0l-8.37,0l-1.13,-2.5l-1.12,2.5l-1.38,0l-1.25,5l-1.25,-5l-1.5,0l-2.25,-9.5l-2.25,9.5l-1.25,-2.5l-1.25,2.5l-9,0c0,0
+                    0,0 0,0c0,8.84 7.16,16 16,16c3.2,0 -3.2,0 0,0z" fill="#ffdd00" />
+                    </a>
+                </g>
+            </svg>
+            <span class="ml-2">Opendatabot</span>
+        </a>
+
+        <div class="navbar-nav-scroll w-100">
+            <ul class="navbar-nav bd-navbar-nav flex-row ">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Відкриті дані
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">API Розробникам</a>
+                </li>
+                <li class="nav-item mr-md-auto">
+                    <a class="nav-link" href="#">Журналістам</a>
+                </li>
+
+                <li class="nav-item dropleft">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">🇺🇦
+                        <span class="d-none d-sm-inline-block">Українська</span>
+                    </a>
+                    <div class="dropdown-menu w-100" aria-labelledby="dropdown04">
+                        <a class="dropdown-item" href="#">Русский</a>
+                        <a class="dropdown-item" href="#">English</a>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-10 col-12 offset-lg-2 offset-sm-1 ofset-0 mb-4 ">
+                <div class="row my-md-5">
+                    <div class="col-12 col-md-10 mx-auto text-center">
+                        <h2 class="mt-4 mb-2 display-2">Opendatabot для журналістів</h2>
+                        <p>Opendatabot - це платформа для роботи з відкритими державними даними.
+                            <br>Ми збираємо, об’єднуємо та аналізуємо інформацію з дванадцяти основних реєстрів країни та готові
+                            ділитися цими даними з журналістами</p>
+                        <div class="form-group email-cta mx-auto">
+                            <form data-toggle="validator" role="form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="inputEmail" data-error="Будь ласка, перевірте введений E-mail" placeholder="Введіть ваш E-mail"
+                                        required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <button class="btn btn-primary btn-block" type="submit">Отримати професійний акаунт</button>
+                            </form>
+                            <div class="alert alert-success" role="alert">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            <p>
+                                <strong>Дякую, за проявлений інтерес!</strong>
+                                <br> Вам на E-mail надійде лист з подальшими інструкціями</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="mt-4 mb-4 display-2 text-center">Чим ми можемо вам допомогти?</h2>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card-deck">
+                            <div class="card mb-4 bg-white">
+                                <img class="card-img-top" src="http://www.muchdata.net/assets/news.png" alt="News">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a class="text-dark" href="#">Новини</a>
+                                    </h4>
+                                    <p class="card-text"> Щотижня наша команда робить власне журналістське розслідування. Ми обираємо тему, знаходимо всі необхідні дані, беремо коментарі у експертів, пишемо текст і робимо інфографіку. Найбільш цікавими фактами ми ділимося в нашій розсилці.</p>
+                                </div>
+
+                            </div>
+
+                            <div class="card mb-4 bg-white">
+                                <img class="card-img-top" src="http://www.muchdata.net/assets/research.png" alt="Professional account">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a class="text-dark" href="#">Дослідження</a>
+                                    </h4>
+                                    <p class="card-text"> Ми допомагаємо журналістам отримати дані та зробити аналітику. Просто розкажіть нам про вашу ідею, і ми допоможемо вам з фактами. Для натхнення радимо почитати нашу інструкцію.
+                                        </p>
+                                </div>
+
+                            </div>
+
+                            <div class="card mb-4 bg-white">
+                                <img class="card-img-top" src="http://www.muchdata.net/assets/pro-acc.png" alt="Professional account">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a class="text-dark" href="#">Професійні аккаунти</a>
+                                    </h4>
+                                    <p class="card-text"> Ми надаємо журналістам безкоштовний доступ до професійних акаунтів. Ви зможете одночасно слідкувати за 50 компаніями та 50 судовими справами й отримувати сповіщення у разі будь-яких змін.  </p>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-md-5">
+                        <div class="col-12 col-md-10 mx-auto text-center">
+                            <h2 class="mt-4 mb-2 display-2">Познайомтеся з Дариною Даниленко!</h2>
+                            <p>Дарина - журналіст та директор з комунікацій в Opendatabot. Якщо ви не можете заснути, бо вам прийшла в голову ідея геніального розслідування, якщо вам сумно, бо ви не отримали нашого листа в понеділок, або ви просто не знаєте, на яку кнопку треба натиснути в боті, - пишіть їй.</p>
+                            <div class="card mb-4 bg-white contact-widget mx-auto">
+                                    
+                                    <div class="card-body p-3">
+                                            <div class="media">
+                                                    <img class="mr-3 rounded-circle" src="http://www.muchdata.net/assets/publishers_files/daryna-avatar.jpg" alt="Дарина Даниленко">
+                                                    <div class="media-body text-left">
+                                                      <h5 class="mt-0">Дарина Даниленко</h5>
+                                                      <a href="https://www.facebook.com/darina.khimich">Напишіть у Facebook</a>
+                                                    </div>
+                                                </div>
+                                    </div>
+    
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+    <footer class="text-muted" style="background-color:#f0f2f5;">
+        <div class="container-fluid p-3 p-md-5">
+
+
+            <ul class="nav  justify-content-md-start justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Opendatabot</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Відкриті дані</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">API Розробникам</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Журналістам</a>
+                </li>
+            </ul>
+
+            <div class="m-3">
+                <p>Всі матеріали на цьому сайті розміщені на умовах
+                    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode.uk" class="text-dark">ліцензії Creative Commons Із Зазначенням Авторства 4.0 Міжнародна</a>, якщо інше не зазначено на відповідній
+                    сторінці.
+                </p>
+
+                <address>
+                    <strong>©&nbsp;2016—2018
+                        <a href="https://opendatabot.com" class="text-dark">Opendatabot</a>
+                    </strong>
+                    <br> Україна, Дніпро, вул. Мечникова 10б, офіс 402
+                    <br>
+                    <abbr title="Phone">Телефон:</abbr> +380 67 505-04-82
+                </address>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <footer class="text-muted" style="background-color:#f0f2f5;">
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 col-sm-10 col-12 offset-lg-2 offset-sm-1 ofset-0 py-4">
+                    <p>Матеріали на цій сторінці розміщені на умовах
+                        <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.uk">Creative Commons Із Зазначенням Авторства - Некомерційна - Без похідних 4.0 Міжнародна</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/assets/journalists-script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
